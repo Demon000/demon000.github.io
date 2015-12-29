@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LogicSquares</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="style.css">
+<!--<link rel="stylesheet" type="text/css" href="black.css">-->
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<script src="jquery.js"></script>
+	<script src="game.js"></script>
+</head>
+<body onload="prepareGame();clock();" id="bodyid" class="colorbackground">
+	<div id="status" class="colordark">
+	<span id="time" class="right">0:00</span>
+	</div>
+	<div id="action" class="colorbase">
+	<img id="button" src="menu.png" onclick="toggleMenu();">
+	</div>
+	<div id="panel" class="colorbackground">
+	<input type="checkbox" id="alertBox" onclick="changeAlertBox();"><span>Disable PopUp</span>
+	</div>
+	<div id="shadow" onclick="toggleMenu();">
+	</div>
+	<div id="content">
+		<table id="game">
+		<tr>
+				<td id="1" onclick="color(1)" class="colorbase">
+				<td id="2" onclick="color(2)" class="colorbase">
+				<td id="3" onclick="color(3)" class="colorbase">
+			</tr>
+			<tr>
+				<td id="4" onclick="color(4)" class="colorbase">
+				<td id="5" onclick="color(5)" class="colorbase">
+				<td id="6" onclick="color(6)" class="colorbase">
+			</tr>
+			<tr>
+				<td id="7" onclick="color(7)" class="colorbase">
+				<td id="8" onclick="color(8)" class="colorbase">
+				<td id="9" onclick="color(9)" class="colorbase">
+			</tr>
+		</table>
+		<table id="scoretable">
+		<tr>
+			<td><span id="highscore">0</span>
+			<td><span id="timer" class="right">0:00</span>
+		</tr>
+		<tr>
+			<td><span class="head">Highscore</span>
+			<td><span class="head right">Time</span>
+		</tr>
+		<tr>
+			<td><span id="score">0</span>
+			<td><span id="moves" class="right">0</span>
+		</tr>
+		<tr>
+			<td><span class="head">Score</span>
+			<td><span class="head right">Moves</span>
+		</tr>
+		<tr>
+			<td><span id="games">0</span>
+			<td><span id="eff" class="right"></span>
+		</tr>
+		<tr>
+			<td><span class="head">Games</span>
+			<td><span class="head right"></span>
+		</tr>
+		</table>
+	</div>
+</body>
+</html>

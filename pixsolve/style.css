@@ -1,0 +1,149 @@
+*
+{
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+title
+{
+	display: none;
+}
+main
+{
+	text-align: center;
+	margin-top: 92px;
+}
+main span
+{
+	margin-bottom: 32px;
+}
+header
+{
+	height: 60px;
+	background: #212121;
+	display: flex;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 500;
+	justify-content: flex-end;
+}
+#searchicon, #infoicon
+{	
+	margin: 12px;
+	width: 36px;
+	height: 36px;
+}
+#searchinput, #language
+{
+	margin: 12px;
+}
+#searchicon
+{
+	background: url(search.png) no-repeat center / contain;
+}
+#infoicon
+{
+	background: url(info.png) no-repeat center / contain;
+}
+figure
+{
+	display: inline-block;
+
+	position: relative;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	margin-left: 4px;
+}
+figure img
+{
+	width: 100%;
+	height: 100%;
+}
+figure figcaption
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
+	padding: 16px;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	text-transform: capitalize;
+
+	color: #FFF;
+	background: rgba(0, 0, 0, 0.5);
+}
+#searchinput
+{
+	width: 50%;
+	height: 36px;
+
+	background: transparent;
+	color: #FFF;
+
+
+	border: none;
+	border-bottom: 1px solid #FFF;
+	transition: border 0.25s;
+
+	font-family: 'Roboto Mono', ;
+}
+#searchinput:focus
+{
+	border-bottom: 2px solid #FFF;
+}
+#language
+{
+	height: 36px;
+
+	background: transparent;
+	color: #FFF;
+
+	border: none;
+	border-bottom: 1px solid #FFF;
+	transition: border 0.25s;
+
+	background: url(caret.png) no-repeat right center / 5px;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.box
+{
+	display: none;
+
+	width: 70vw;
+	height: 70vh;
+	position: fixed;
+	left: 15vw;
+	top: 15vh;
+	background: #FFF;
+	border-radius: 2px;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+	z-index: 510;
+}
+#blackscreen
+{
+	display: none;
+
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 505;
+}
+#info
+{
+	text-align: center;
+}
+#info span
+{
+	margin: 16px;
+}

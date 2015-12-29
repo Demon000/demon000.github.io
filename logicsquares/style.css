@@ -1,0 +1,82 @@
+body, html
+{
+	margin:0;
+	padding:0;
+	font-family: 'Roboto', sans-serif !important;
+}
+.colorbase{background-color:#2196F3;color:#FFFFFF;}
+.colordark{background-color:#1976D2;color:#FFFFFF;}
+.colorbackground{background-color:#FFFFFF; color:#111111;}
+.colorsecondary{background-color:#FF4081;color:#FFFFFF;}
+#scoretable tr td span.head{color:#555555;}
+.right{float:right;}
+#bodyid{transition: background-color 0.3s;}
+#action, #status, #content{width:100%;}
+#scoretable tr td span:not(.head){font-size:30px;}
+#scoretable{width:90%;margin:auto;}
+#action, #game
+{
+	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+}
+#status
+{
+	line-height:24px;
+	height:24px;
+}
+#action
+{
+	height:56px;
+}
+#game
+{
+	margin:auto;
+	margin-top:5vw;
+	width:60vmin;
+	height:60vmin;
+	border-collapse:separate;
+    border-spacing:4px;
+}
+#time
+{
+	font-weight: bold;
+	margin-right: 4px;
+}
+#button
+{
+	position:relative;
+	top:8px;
+
+}
+#panel
+{
+	z-index: 20;
+	position:fixed;
+	width:20vw;
+	height:calc(100% - 80px);
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-75vw);
+    transition: transform 0.3s ease-in-out;
+}
+#shadow
+{
+	display:none;
+	background-color:rgba(0,0,0,0.45);
+	position:fixed;
+	width:100vw;
+	height:100vh;
+}
+
+@media only screen and (max-width: 720px)
+{
+	#game
+	{
+		width:90vw;
+		height:90vw;
+	}
+	#panel
+	{
+		width:75vw;
+	}
+}

@@ -1,0 +1,220 @@
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body
+{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+  height: 200vh;
+
+  color: #222;
+  background: #eeedee;
+
+  font-size: 0;
+  user-select: none;
+  -moz-user-select: none;
+}
+.ink 
+{
+  display: block;
+  position: absolute;
+  
+  border-radius: 50%;
+  animation: ripple 0.5s ease-out;
+  transform: scale(0);
+  
+  background: #02A8F3;
+  pointer-events: none;
+}
+@keyframes ripple 
+{
+  100% 
+  {
+    opacity: 0; transform: scale(1);
+  }
+}
+body > *
+{
+  vertical-align: top;
+}
+a
+{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.icon 
+{
+  font-family: 'Material Icons';
+  font-size: 24px;
+  height: 100%;
+  text-transform: none;
+}
+nav
+{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: flex-end;
+
+  height: 60px;
+  width: 100%;
+  padding: 0 10%;
+
+  transition: all 0.25s ease-in-out;
+
+  background: #fff;
+
+  font-size: 15px;
+}
+nav + *
+{
+  margin-top: 60px;
+}
+nav > *
+{
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  padding: 0 30px;
+  line-height: 60px;
+
+  cursor: pointer;
+}
+nav > *:hover
+{
+  color: #02A8F3;
+}
+nav .logo
+{
+  width: 120px;
+  background: url(../assets/logoblack.png) no-repeat center center / contain;
+  margin-right: auto;
+}
+main
+{
+  width: calc(100% / 3 * 2);
+  padding: 64px 48px;
+  display: inline-block;
+}
+main > *
+{
+  font-size: initial;
+  vertical-align: top;
+}
+main article
+{
+  width: calc(50% - 32px);
+  margin: 16px;
+
+  background: #fff;
+  border-radius: 2px;
+
+  display: inline-block;
+
+  overflow: hidden;
+}
+main article img
+{
+  width: 100%;
+
+  height: 240px;
+  object-fit: cover;
+
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+
+  transition: all 0.25s ease 0s;
+}
+main article img:hover
+{
+  transform: scale(1.1, 1.1);
+}
+main article .text
+{
+  padding: 30px;
+  line-height: 20px;
+  font-size: 13px;
+}
+main article .text *
+{
+  display: block;
+}
+main article .title
+{
+  font-size: 19px;
+  line-height: 32px;
+  font-weight: 300;
+}
+main article .date
+{
+  color: #716B71;
+  margin-bottom: 20px;
+  line-height: 13px;
+}
+main article .buttons
+{
+  height: 48px;
+  padding: 0 32px;
+  line-height: 48px;
+  border-top: 1px solid #eee;
+
+  display: flex;
+  justify-content: flex-end;
+  color: #716B71;
+}
+main article .buttons > *
+{
+  padding: 0 8px;
+  position: relative;
+  overflow: hidden;
+}
+main article .buttons .icon:hover
+{
+  color: #02A8F3;
+}
+aside
+{
+  width: calc(100% / 3);
+  padding: 64px 48px;
+  margin-top: 60px;
+  display: inline-block;
+}
+aside article
+{
+  width: calc(100% - 32px);
+  margin: 16px;
+  padding: 8px;
+  background: #fff;
+  border-radius: 2px;
+  height: 100px;
+}
+aside article > *
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+aside article img
+{
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+}
+
+aside article .text
+{
+  line-height: 20px;
+  font-size: 13px;
+  padding: 16px;
+}
+aside article .date
+{
+  color: #716B71;
+}

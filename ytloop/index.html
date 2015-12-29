@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YoutubeLooper</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" src="script/seturl.js"></script>
+</head>
+<body onload="clock();">
+	<div id="status">
+		<span id="time" class="right">0:00</span>
+	</div>
+	<div id="action">
+
+	</div>
+	<div id="content">
+		<form onsubmit="return getid();" class="my-form">
+			<input type="text" id="tb" autocomplete="on" placeholder="Enter the Youtube Video URL, name or ID here...">
+			<input type="submit" id="btnloop" value="Loop">
+		</form>
+		<div id="vid">
+			<div>
+				<iframe id="clipvid" src="http://www.youtube.com/embed/?listType=search&list=trap&showinfo=1&loop=1" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
