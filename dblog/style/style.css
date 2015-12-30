@@ -9,14 +9,13 @@ body
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 
-  height: 200vh;
-
   color: #222;
   background: #eeedee;
 
   font-size: 0;
   user-select: none;
   -moz-user-select: none;
+  -webkit-user-select: none;
 }
 .ink 
 {
@@ -53,15 +52,17 @@ a
   font-size: 24px;
   height: 100%;
   text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
 }
 nav
 {
   position: fixed;
   top: 0;
   z-index: 1000;
-
-  display: flex;
-  justify-content: flex-end;
 
   height: 60px;
   width: 100%;
@@ -85,8 +86,11 @@ nav > *
 
   padding: 0 30px;
   line-height: 60px;
+  height: 60px;
 
   cursor: pointer;
+
+  float: right;
 }
 nav > *:hover
 {
@@ -96,7 +100,8 @@ nav .logo
 {
   width: 120px;
   background: url(../assets/logoblack.png) no-repeat center center / contain;
-  margin-right: auto;
+
+  float: left;
 }
 main
 {
@@ -166,8 +171,6 @@ main article .buttons
   line-height: 48px;
   border-top: 1px solid #eee;
 
-  display: flex;
-  justify-content: flex-end;
   color: #716B71;
 }
 main article .buttons > *
@@ -175,6 +178,7 @@ main article .buttons > *
   padding: 0 8px;
   position: relative;
   overflow: hidden;
+  float: right;
 }
 main article .buttons .icon:hover
 {
@@ -217,4 +221,38 @@ aside article .text
 aside article .date
 {
   color: #716B71;
+}
+@media (max-width: 1080px)
+{
+  aside
+  {
+    display: none;
+  }
+  main
+  {
+    width: 100%;
+    padding: 16px;
+  }
+  main article
+  {
+    width: 100%;
+    margin: 0 0 32px 0;
+  }
+  nav
+  {
+    padding: 0;
+    position: relative;
+  }
+  nav > *
+  {
+    display: block;
+    width: 100% !important;
+    background: inherit;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  nav + *
+  {
+    margin-top: 0;
+  }
 }
