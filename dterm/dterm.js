@@ -27,7 +27,7 @@ var dTerm = new Vue(
       print(str)
       {
         var self = this;
-        str.split('').every(function(char)
+        str.split('').forEach(function(char)
         {
           self.printChar(char);
         });
