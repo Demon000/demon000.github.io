@@ -6,6 +6,7 @@
   vertical-align: top;
   cursor: default;
   text-transform: none;
+  outline: none;
 }
 body
 {
