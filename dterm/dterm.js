@@ -1,10 +1,18 @@
 window.onkeypress = function(e)
 {
-  var charCode = e.which;
-  if(charCode != 0)
+  var charCode = e.charCode;
+  if(charCode != '0')
   {
     var char = String.fromCharCode(charCode);
     dTerm.print(char);
+  }
+}
+window.onkeydown = function(e)
+{
+  var keyCode = e.keyCode;
+  if(dTerm[keyCode])
+  {
+    dTerm[keyCode]();
   }
 }
 var dTerm = new Vue(
@@ -16,15 +24,15 @@ var dTerm = new Vue(
     },
     methods:
     {
-      print: function(str)
+      print(str)
       {
         var self = this;
         str.split('').every(function(char)
         {
-          self.chars.push(char);
+          self.printChar(char);
         });
       },
-      printChar: function(char)
+      printChar(char)
       {
         var o = new Char(
           {
@@ -32,14 +40,15 @@ var dTerm = new Vue(
             class: 'color-red'
           });
         this.chars.push(o);
+      },
+      8()
+      {
+        this.chars.pop();
       }
     }
   });
 function Char(options)
 {
-  if(typeof options.class == 'Array')
-    this.class = options.class.join(' ');
-  else
-    this.class = options.class;
+  this.class = options.class;
   this.data = options.data;
 }
