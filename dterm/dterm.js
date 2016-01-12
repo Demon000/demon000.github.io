@@ -4,7 +4,7 @@ window.onkeypress = function(e)
   if(charCode != '0')
   {
     var char = String.fromCharCode(charCode);
-    dTerm.print(char);
+    dTerm.key(char);
   }
 }
 window.onkeydown = function(e)
@@ -21,34 +21,54 @@ var dTerm = new Vue(
     data:
     {
       chars: [],
+      command: '',
+    },
+    created()
+    {
+      this.printChar('-',
+      {
+        cursor: true,
+      });
     },
     methods:
     {
-      print(str)
+      print(str, options)
       {
         var self = this;
         str.split('').forEach(function(char)
         {
-          self.printChar(char);
+          self.printChar(char, options);
         });
       },
-      printChar(char)
+      printChar(char, options)
       {
-        var o = new Char(
-          {
-            data: char,
-            class: 'color-red'
-          });
-        this.chars.push(o);
+        options = options || {};
+        var o = new Char(char, options);
+        this.chars.splice(this.chars.length - 1, 0, o);
+      },
+      key(char)
+      {
+        this.command += char;
+        this.printChar(char);
       },
       8()
       {
-        this.chars.pop();
+        this.chars.splice(this.chars.length - 2, 1);
+      },
+      13()
+      {
+
       }
     }
   });
-function Char(options)
+function Char(char, options)
 {
-  this.class = options.class;
-  this.data = options.data;
+  this.class = '';
+  if(options.cursor)
+    this.class += 'cursor ';
+  if(options.color)
+    this.class += 'color-' + options.color + ' ';
+  if(options.background)
+    this.class += 'bg-' + options.background + ' ';
+  this.data = char;
 }

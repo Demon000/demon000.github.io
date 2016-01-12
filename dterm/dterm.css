@@ -18,7 +18,28 @@
 {
   color: red;
 }
+.color-dodge-blue
+{
+  color: #1E90FF;
+}
 .bg-yellow
 {
   background: yellow;
+}
+.cursor
+{
+  color: transparent;
+  animation-name: flash;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes flash{
+    0%
+    {
+        background-color: #fff;
+    }
+    100%
+    {
+        background-color: transparent;
+    }
 }
