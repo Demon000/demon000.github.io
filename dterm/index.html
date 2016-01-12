@@ -6,7 +6,7 @@
 </head>
 <body>
   <div id="dterm">
-    <span v-for="char in chars" track-by="$index" v-bind:class="char.class">{{char.data}}</span>
+    <span v-for="char in chars" track-by="$index" v-bind:class="char.color + char.background + char.mod">{{char.data}}</span>
   </div>
   <link rel="stylesheet" type="text/css" href="dterm.css">
   <script src="lodash.js"></script>

@@ -21,13 +21,13 @@ var dTerm = new Vue(
     data:
     {
       chars: [],
-      command: '',
+      input: '',
     },
     created()
     {
       this.printChar('-',
       {
-        cursor: true,
+        mod: 'cursor',
       });
     },
     methods:
@@ -48,12 +48,13 @@ var dTerm = new Vue(
       },
       key(char)
       {
-        this.command += char;
+        this.input += char;
         this.printChar(char);
       },
       8()
       {
-        this.chars.splice(this.chars.length - 2, 1);
+        if(this.chars.length > 1 && this.chars[this.chars.length - 2].lock == false)
+          this.chars.splice(this.chars.length - 2, 1);
       },
       13()
       {
@@ -63,12 +64,15 @@ var dTerm = new Vue(
   });
 function Char(char, options)
 {
-  this.class = '';
-  if(options.cursor)
-    this.class += 'cursor ';
-  if(options.color)
-    this.class += 'color-' + options.color + ' ';
-  if(options.background)
-    this.class += 'bg-' + options.background + ' ';
+  this.color = options.color ? 'color-' + options.color : '';
+  this.background = options.background? 'bg-' + options.background : '';
+  this.mod = options.mod || '';
+  this.lock = options.lock || false;
+
   this.data = char;
 }
+dTerm.print('[root @ dterm ~]$ ',
+{
+  lock: true,
+  color: 'dodge-blue',
+});
