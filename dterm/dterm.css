@@ -36,10 +36,10 @@
 @keyframes flash{
     0%
     {
-        background-color: #fff;
+      background-color: transparent;
     }
     100%
     {
-        background-color: transparent;
+      background-color: #fff;
     }
 }
