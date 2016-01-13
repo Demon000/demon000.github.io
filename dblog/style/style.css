@@ -27,27 +27,27 @@ a
   color: inherit;
   cursor: pointer;
 }
-.ink 
+.ink
 {
   display: block;
   position: absolute;
-  
+
   border-radius: 50%;
-  animation: ripple 0.5s ease-out;
+  animation: ripple 0.25s ease-out;
   transform: scale(0);
-  
-  background: #02A8F3;
+
+  background: #000;
   pointer-events: none;
 }
-@keyframes ripple 
+@keyframes ripple
 {
-  100% 
+  100%
   {
     opacity: 0;
     transform: scale(1);
   }
 }
-.icon 
+.icon
 {
   height: 100%;
 
@@ -58,6 +58,8 @@ a
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
+
+  color: #716B71;
 }
 nav
 {
@@ -96,7 +98,7 @@ nav > *
 }
 nav > *:hover
 {
-  color: #02A8F3;
+  /*color: #02A8F3;*/
 }
 nav .logo
 {
@@ -175,7 +177,6 @@ main article .buttons
   padding: 0 32px;
 
   border-top: 1px solid #eee;
-  color: #716B71;
 }
 main article .buttons > *
 {
@@ -185,9 +186,9 @@ main article .buttons > *
   padding: 0 8px;
   overflow: hidden;
 }
-main article .buttons .icon:hover
+main article img, main article .title
 {
-  color: #02A8F3;
+  cursor: pointer;
 }
 aside
 {
@@ -229,6 +230,15 @@ aside article .text
 aside article .date
 {
   color: #716B71;
+}
+.more
+{
+  width: 100%;
+  text-align: center;
+}
+.more > .icon
+{
+  font-size: 32px;
 }
 @media (max-width: 1024px)
 {

@@ -9,10 +9,8 @@
 {
   background: #000;
   color: #fff;
-  width: 80ch;
-  height: 336px;
   overflow-y: scroll;
-  word-wrap: break-word;
+  word-break: break-all;
 }
 .color-red
 {
@@ -26,9 +24,8 @@
 {
   background: yellow;
 }
-.cursor
+.flash
 {
-  color: transparent;
   animation-name: flash;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
@@ -36,10 +33,10 @@
 @keyframes flash{
     0%
     {
-      background-color: transparent;
+      opacity: 0;
     }
     100%
     {
-      background-color: #fff;
+      opacity: 1;
     }
 }

@@ -1,8 +1,3 @@
-var keys = document.querySelectorAll('main article .buttons > *, nav > *');
-for(var i = 0; i < keys.length; i++)
-{
-  keys[i].onmousedown = ripple;
-}
 function ripple(e)
 {
   var parent = e.target;

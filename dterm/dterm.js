@@ -1,7 +1,7 @@
 window.onkeypress = function(e)
 {
   var charCode = e.charCode;
-  if(charCode != '0')
+  if(charCode != '0' && charCode != '32')
   {
     var char = String.fromCharCode(charCode);
     dTerm.key(char);
@@ -21,14 +21,27 @@ var dTerm = new Vue(
     data:
     {
       chars: [],
+      geometry:
+      {
+        'font-size': '12',
+        'width': '80',
+        'height': '24',
+        'line-height': '1.1'
+      },
+      style: {},
       input: '',
+      commands: [],
     },
     created()
     {
-      this.printChar('-',
+      this.printChar('&#9608;',
       {
-        mod: 'cursor',
+        mod: 'flash',
       });
+      this.style['font-size'] = this.geometry['font-size'] + 'px';
+      this.style['width'] = this.geometry['width'] + 'ch';
+      this.style['line-height'] = this.geometry['font-size'] * this.geometry['line-height'] + 'px';
+      this.style['height'] = this.geometry['font-size'] * this.geometry['line-height'] * this.geometry['height'] + 'px';
     },
     methods:
     {
@@ -58,14 +71,20 @@ var dTerm = new Vue(
       },
       13()
       {
-
-      }
+        var left = this.geometry['width'] - this.chars.length % this.geometry['width'] - 21;
+        for(var i = 0; i < left; i++)
+          this.printChar('&nbsp;');
+      },
+      32()
+      {
+        this.printChar('&nbsp;');
+      },
     }
   });
 function Char(char, options)
 {
   this.color = options.color ? 'color-' + options.color : '';
-  this.background = options.background? 'bg-' + options.background : '';
+  this.background = options.background ? 'bg-' + options.background : '';
   this.mod = options.mod || '';
   this.lock = options.lock || false;
 
