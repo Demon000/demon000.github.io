@@ -219,6 +219,7 @@ aside article img
   width: 84px;
   height: 84px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 aside article .text

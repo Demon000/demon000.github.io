@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Roboto:400,500,300'>
 </head>
 <body>
-	<dialog class="view" v-if="viewing">
+	<div class="view" v-if="viewing">
 		<div>
 			<a class="icon back" v-on:click="viewing = false">arrow_back</a>
 			<article>
@@ -19,7 +19,7 @@
 				</div>
 			</article>
 		</div>
-	</dialog>
+	</div>
 	<template v-if="!viewing">
 		<nav>
 			<a href="/" class="logo"></a>
