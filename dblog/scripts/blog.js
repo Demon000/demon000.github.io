@@ -7,6 +7,8 @@ var dblog = new Vue(
      collection: [],
      limit: 4,
      page: 4,
+     viewing: false,
+     article: null,
    },
    methods:
    {
@@ -20,7 +22,16 @@ var dblog = new Vue(
      },
      view(article)
      {
-       console.log(article);
+       this.article = article;
+       var self = this;
+       request
+       .get('data/' + article.id + '/content.md')
+       .end(function(err, res)
+       {
+         self.article.content = marked(res.text);
+         self.viewing = true;
+       });
+
      },
      ripple: ripple,
    }
@@ -30,7 +41,6 @@ var dblog = new Vue(
  .end(function(err, res)
  {
    var resource = JSON.parse(res.text);
-   resource.reverse();
    resource.forEach(function(article)
    {
      dblog.collection.push(article);

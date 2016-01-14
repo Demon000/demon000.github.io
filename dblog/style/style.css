@@ -8,6 +8,10 @@
   text-transform: none;
   outline: none;
 }
+[v-cloak]
+{
+  display: none;
+}
 body
 {
   font-family: 'Roboto', sans-serif;
@@ -95,10 +99,6 @@ nav > *
 
   padding: 0 30px;
   cursor: pointer;
-}
-nav > *:hover
-{
-  /*color: #02A8F3;*/
 }
 nav .logo
 {
@@ -240,6 +240,72 @@ aside article .date
 {
   font-size: 32px;
 }
+.view
+{
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  background: url(../data/test/code.jpg) no-repeat center center / cover;
+}
+.view > div
+{
+  background: rgba(0, 0, 0, 0.8);
+  padding: 8px;
+}
+.view .back
+{
+  color: #fff;
+}
+.view article
+{
+  max-width: 900px;
+  min-height: 1200px;
+  margin: 25vh auto 0 auto;
+  padding: 64px 0;
+  background: #fff;
+  border-radius: 2px;
+}
+.view .text
+{
+  width: 700px;
+  margin: auto;
+  color: #1e1e1e;
+  font-size: 16px;
+}
+.markdown b
+{
+  font-weight: 500;
+}
+.markdown ul, .markdown ol
+{
+  margin-left: 32px;
+}
+.markdown p, .markdown li
+{
+  line-height: 28px;
+  margin: 16px auto;
+}
+.markdown hgroup
+{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.markdown h1
+{
+  font-size: 56px;
+  line-height: 56px;
+}
+.markdown h2
+{
+  font-size: 34px;
+  line-height: 40px;
+}
+.markdown h3
+{
+  font-size: 24px;
+  line-height: 32px;
+}
+.markdown h2
 @media (max-width: 1024px)
 {
   aside
