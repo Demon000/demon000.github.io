@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Roboto:400,500,300'>
 </head>
 <body>
-	<div class="view" v-if="viewing">
+	<div class="view" v-if="viewing" v-bind:style="'background: url(data/' + article.id + '/cover.jpg)'">
 		<div>
 			<a class="icon back" v-on:click="viewing = false">arrow_back</a>
 			<article>
@@ -26,7 +26,7 @@
 		</nav>
 		<main>
 			<article v-for="article in collection" v-if="$index < limit">
-				<img v-bind:src="'data/' + article.id + '/' + article.image" v-on:click="view(article)">
+				<img v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
 				<div class="text">
 					<a class="title" v-on:click="view(article)">{{{ article.title }}}</a>
 					<p class="date">{{{ article.date }}}</p>
@@ -44,7 +44,7 @@
 	<aside>
 		<section>
 			<article v-for="article in collection" v-if="$index < 5">
-				<img v-bind:src="'data/' + article.id + '/' + article.image" v-on:click="view(article)">
+				<img v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
 				<div class="text">
 					<a class="title" v-on:click="view(article)">{{{ article.title }}}</a>
 					<p class="date">{{{ article.date }}}</p>

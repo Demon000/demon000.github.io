@@ -12,15 +12,15 @@ var dblog = new Vue(
    },
    methods:
    {
-     add(article)
+     add: function(article)
      {
        this.collection.push(article);
      },
-     increase()
+     increase: function()
      {
        this.limit += this.page;
      },
-     view(article)
+     view: function(article)
      {
        this.article = article;
        var self = this;

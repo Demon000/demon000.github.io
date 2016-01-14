@@ -246,7 +246,9 @@ aside article .date
   position: absolute;
   z-index: 10000;
   width: 100%;
-  background: url(../data/test/code.jpg) no-repeat center center / cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .view > div
 {
