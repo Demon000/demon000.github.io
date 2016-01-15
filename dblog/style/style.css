@@ -10,21 +10,17 @@
 }
 pre
 {
-  padding: 8px;
-}
-[v-cloak]
-{
-  display: none;
+  padding: 16px 8px;
+  white-space: pre-wrap;
 }
 body
 {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 0;
 
   color: #222;
   background: #eeedee;
 
-  font-size: 0;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -68,6 +64,7 @@ a
   font-feature-settings: 'liga';
 
   color: #716B71;
+  cursor: pointer;
 }
 nav
 {
@@ -183,23 +180,24 @@ main article .buttons
 }
 main article .bar
 {
-  height: 62px;
-  line-height: 46px;
+  height: 56px;
+  line-height: 40px;
   padding: 8px 32px;
 
   border-top: 1px solid #eee;
 }
 main article .bar .author
 {
-  height: 46px;
-  width: 46px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
 main article .bar .name
 {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   padding: 0 8px;
+  color: #616161;
 }
 main article .buttons > *
 {
@@ -266,9 +264,6 @@ aside article .date
 }
 .view
 {
-  position: absolute;
-  z-index: 10000;
-  width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -289,16 +284,69 @@ aside article .date
   max-width: 900px;
   min-height: 1200px;
   margin: 25vh auto 0 auto;
-  padding: 64px 0;
   background: #fff;
   border-radius: 2px;
 }
-.view .text
+.view article .text
 {
+  padding: 32px 0;
   width: 700px;
   margin: auto;
   color: #1e1e1e;
   font-size: 16px;
+}
+.view article .cover
+{
+  height: 300px;
+  position: relative;
+}
+.view article .cover img
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.view article .cover p
+{
+  padding: 24px;
+  font-size: 34px;
+  line-height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+}
+.view article .meta
+{
+  height: 76px;
+  padding: 16px;
+}
+.view article .meta > *
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.view article .meta div
+{
+  padding: 0 16px;
+}
+.view article .meta p
+{
+  font-size: 14px;
+  color: #616161;
+  font-weight: 400;
+}
+.view article .meta .commands
+{
+  float: right;
+}
+.view article .meta img
+{
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
 }
 .markdown b
 {
@@ -367,26 +415,14 @@ aside article .date
   {
     margin-top: 0;
   }
-  .view > div
-  {
-    padding: 8px;
-  }
   .view article
   {
-    margin-top: 10vh;
+    margin-top: 20vh;
     width: 100%;
   }
-  .view .text
+  .view article .text
   {
     width: 100%;
-    padding: 0;
-  }
-  .view article
-  {
     padding: 16px;
-  }
-  pre
-  {
-    white-space: pre-wrap;
   }
 }

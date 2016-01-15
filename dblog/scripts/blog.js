@@ -1,16 +1,4 @@
 request = window.superagent;
-window.onhashchange = function()
-{
-  if(gethash('article'))
-    dblog.viewing = true;
-  else
-    dblog.viewing = false;
-}
-marked.setOptions({
- highlight: function (code) {
-   return hljs.highlightAuto(code).value;
- }
-});
 var dblog = new Vue(
  {
    el: 'body',
@@ -20,32 +8,21 @@ var dblog = new Vue(
      authors: {},
      limit: 4,
      page: 4,
-     viewing: false,
-     article: null,
+     loaded: false,
    },
    methods:
    {
-     add: function(article)
+     add(article)
      {
        this.collection.push(article);
      },
-     increase: function()
+     increase()
      {
        this.limit += this.page;
      },
-     view: function(article)
+     view(article)
      {
-       this.article = article;
-       var self = this;
-       request
-       .get('data/' + article.id + '/content.md')
-       .end(function(err, res)
-       {
-         self.article.content = marked(res.text);
-         history.pushState(null, null, '#article=' + article.id);
-         self.viewing = true;
-       });
-
+       location.assign(`article.html#${article.id}`);
      },
      ripple: ripple,
    }
@@ -58,7 +35,6 @@ var dblog = new Vue(
    for(var author in resource)
     dblog.authors[author] = resource[author];
  });
-
  request
  .get('data/articles.json')
  .end(function(err, res)
@@ -68,18 +44,5 @@ var dblog = new Vue(
    {
      dblog.collection.push(article);
    });
-   if(gethash('article'))
-   {
-     var article = _.findWhere(dblog.collection, {id: gethash('article')});
-     console.log(article);
-     if(article)
-      dblog.view(article);
-   }
+   dblog.loaded = true;
  });
-
-
-function gethash(key)
-{
-  var matches = location.hash.match(new RegExp(key+'=([^&]*)'));
-  return matches ? matches[1] : null;
-}
