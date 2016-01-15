@@ -1,8 +1,10 @@
 request = window.superagent;
 window.onhashchange = function()
 {
-  if(!gethash('article'))
-  dblog.viewing = false;
+  if(gethash('article'))
+    dblog.viewing = false;
+  else
+    dblog.viewing = true;
 }
 marked.setOptions({
  highlight: function (code) {
