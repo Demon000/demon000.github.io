@@ -13,6 +13,10 @@ pre
   padding: 16px 8px;
   white-space: pre-wrap;
 }
+pre
+{
+  background: #eee;
+}
 body
 {
   font-family: 'Roboto', sans-serif;
