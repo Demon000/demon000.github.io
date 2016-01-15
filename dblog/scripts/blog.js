@@ -34,15 +34,15 @@ var dblog = new Vue(
    var resource = JSON.parse(res.text);
    for(var author in resource)
     dblog.authors[author] = resource[author];
- });
- request
- .get('data/articles.json')
- .end(function(err, res)
- {
-   var resource = JSON.parse(res.text);
-   resource.forEach(function(article)
-   {
-     dblog.collection.push(article);
-   });
-   dblog.loaded = true;
+  request
+  .get('data/articles.json')
+  .end(function(err, res)
+  {
+    var resource = JSON.parse(res.text);
+    resource.forEach(function(article)
+    {
+      dblog.collection.push(article);
+    });
+    dblog.loaded = true;
+  });
  });

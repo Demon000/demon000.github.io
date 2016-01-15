@@ -38,12 +38,12 @@ var article = new Vue(
       var resource = JSON.parse(res.text)[article.story.author];
       for(var prop in resource)
         article.author[prop] = resource[prop];
-        request
-        .get('data/' + article.id + '/content.md')
-        .end((err, res) =>
-        {
-          article.story.content = marked(res.text);
-          article.loaded = true;
-        });
+      request
+      .get('data/' + article.id + '/content.md')
+      .end((err, res) =>
+      {
+        article.story.content = marked(res.text);
+        article.loaded = true;
+      });
     });
   });
