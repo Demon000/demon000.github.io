@@ -1,4 +1,9 @@
 request = window.superagent;
+window.onhashchange = function()
+{
+  if(!gethash('article'))
+  dblog.viewing = false;
+}
 marked.setOptions({
  highlight: function (code) {
    return hljs.highlightAuto(code).value;
