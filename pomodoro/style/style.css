@@ -1,0 +1,69 @@
+body 
+{
+  margin: 0;
+  padding: 0;
+  
+  height: 100vh;
+  
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  background: url(../assets/bg.jpg) no-repeat center center / cover;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body > *
+{
+  margin: 8px;
+}
+.timer
+{
+  height: 250px;
+  width: 250px;
+  
+  border-radius: 50%;
+  border: 2px solid #fff;
+  
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  cursor: pointer;
+}
+.time
+{
+  font-size: 2.5em;
+}
+.running
+{
+  text-transform: capitalize;
+}
+.numbers
+{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.numbers button, .numbers span
+{
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.2em;
+}
+.numbers .title
+{
+  display: block;
+  font-size: 1em;
+}
+.numbers .subtitle
+{
+  display: block;
+  font-size: 0.7em;
+}
