@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+.icon
+{
+  height: 100%;
+
+  font-family: 'Material Icons';
+  font-size: 24px;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+
+  color: #716B71;
+  cursor: pointer;
+}
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: top;
+  cursor: default;
+  text-transform: none;
+  outline: none;
+}
+body
+{
+  font-family: 'Roboto', sans-serif;
+  font-size: 0;
+
+  color: #222;
+  background: #eeedee;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+pre
+{
+  padding: 16px 8px;
+  white-space: pre-wrap;
+  background: #eee;
+}
+a
+{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.ink
+{
+  display: block;
+  position: absolute;
+
+  border-radius: 50%;
+  animation: ripple 0.25s ease-out;
+  transform: scale(0);
+
+  background: #000;
+  pointer-events: none;
+}
+@keyframes ripple
+{
+  100%
+  {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

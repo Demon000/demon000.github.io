@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>dBlog</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Roboto:400,500,300'>
-	<script src="scripts/superagent.js" type="text/javascript"></script>
-	<script src="scripts/vue.js" type="text/javascript"></script>
-	<script src="scripts/ui.js" type="text/javascript"></script>
+    <title>dBlog</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style/common.css">
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <script src="scripts/superagent.js" type="text/javascript"></script>
+    <script src="scripts/vue.js" type="text/javascript"></script>
+    <script src="scripts/ui.js" type="text/javascript"></script>
 </head>
+
 <body>
-	<template v-if="loaded">
-		<nav>
-			<a href="/" class="logo"></a>
-		</nav>
-		<main>
-			<article v-for="article in collection" v-if="$index < limit">
-				<img class="cover" v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
-				<div class="text">
-					<a class="title" v-on:click="view(article)">{{{ article.title }}}</a>
-					<p class="date">{{{ article.date }}}</p>
-					<p>
-						{{{ article.preview }}}
-					</p>
-				</div>
-				<div class="bar">
-					<img class="author" v-bind:src="'authors/' + article.author + '/avatar.jpg'">
-					<span class="name">by {{{ authors[article.author].name }}}</span>
-				</div>
-			</article>
-			<div class="more">
-				<a class="icon" v-on:click="increase">expand_more</a>
-		</main>
-	<aside>
-		<section>
-			<article v-for="article in collection" v-if="$index < 5">
-				<img v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
-				<div class="text">
-					<a class="title" v-on:click="view(article)">{{{ article.title }}}</a>
-					<p class="date">{{{ article.date }}}</p>
-				</div>
-			</article>
-		</section>
-	</aside>
-	</template>
-	<script src="scripts/blog.js" type="text/javascript"></script>
+    <template v-if="loaded">
+        <nav>
+            <a href="/" class="logo"></a>
+        </nav>
+        <main>
+            <article v-for="article in collection" v-if="$index < limit">
+                <img class="cover" v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
+                <div class="text">
+                    <a class="title" :href="'article.html#' + article.id">{{{ article.title }}}</a>
+                    <p class="date">{{{ article.date }}}</p>
+                    <p>
+                        {{{ article.preview }}}
+                    </p>
+                </div>
+                <div class="bar">
+                    <img class="author" v-bind:src="'authors/' + article.author + '/avatar.jpg'">
+                    <span class="name">by {{{ authors[article.author].name }}}</span>
+                </div>
+            </article>
+            <div class="more" v-if="limit < collection.length">
+                <a class="icon" v-on:click="increase">expand_more</a>
+			</div>
+        </main>
+        <aside>
+            <section>
+                <article v-for="article in collection" v-if="$index < 5">
+                    <img v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
+                    <div class="text">
+                        <a class="title" :href="'article.html#' + article.id">{{{ article.title }}}</a>
+                        <p class="date">{{{ article.date }}}</p>
+                    </div>
+                </article>
+            </section>
+        </aside>
+    </template>
+    <script src="scripts/blog.js" type="text/javascript"></script>
 </body>
+
 </html>
