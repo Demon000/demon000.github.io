@@ -6,8 +6,8 @@ var dblog = new Vue(
    {
      collection: [],
      authors: {},
-     limit: 4,
-     page: 4,
+     limit: 6,
+     page: 6,
      loaded: false,
    },
    methods:

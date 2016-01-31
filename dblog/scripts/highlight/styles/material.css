@@ -1,12 +1,12 @@
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* http://demon000.github.io/ */
 
-/* Tomorrow Comment */
+/* Material Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #8e908c;
+  color: #9e9e9e;
 }
 
-/* Tomorrow Red */
+/* Material Red */
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag,
@@ -15,10 +15,10 @@
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-deletion {
-  color: #c82829;
+  color: #d32f2f;
 }
 
-/* Tomorrow Orange */
+/* Material Orange */
 .hljs-number,
 .hljs-built_in,
 .hljs-builtin-name,
@@ -27,32 +27,32 @@
 .hljs-params,
 .hljs-meta,
 .hljs-link {
-  color: #f5871f;
+  color: #ff5722;
 }
 
-/* Tomorrow Yellow */
+/* Material Yellow */
 .hljs-attribute {
-  color: #eab700;
+  color: #ffeB3b;
 }
 
-/* Tomorrow Green */
+/* Material Green */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-  color: #718c00;
+  color: #009688;
 }
 
-/* Tomorrow Blue */
+/* Material Blue */
 .hljs-title,
 .hljs-section {
-  color: #4271ae;
+  color: #2196f3;
 }
 
-/* Tomorrow Purple */
+/* Material Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #8959a8;
+  color: #ff4081;
 }
 
 .hljs {

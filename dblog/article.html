@@ -16,30 +16,28 @@
 </head>
 
 <body>
-	<div v-if="loaded" :style="'background-image: url(data/' + story.id + '/cover.jpg)'">
-		<div>
-            <a class="icon back" v-on:click="back();">arrow_back</a>
-            <article>
-                <div class="cover">
-                    <img :src="'data/' + story.id + '/cover.jpg'">
-                    <p>{{{story.title}}}</p>
+    <template  v-if="loaded">
+        <a class="icon back" v-on:click="back();">arrow_back</a>
+        <article>
+            <div class="cover">
+                <img :src="'data/' + story.id + '/cover.jpg'">
+                <p>{{{story.title}}}</p>
+            </div>
+            <div class="meta">
+                <img :src="author.image">
+                <div>
+                    <p>{{{author.name}}}</p>
+                    <p>{{{story.date}}}</p>
                 </div>
-                <div class="meta">
-                    <img :src="'authors/' + story.author + '/avatar.jpg'">
-                    <div>
-                        <p>{{{author.name}}}</p>
-                        <p>{{{story.date}}}</p>
-                    </div>
-                    <div class="commands">
-                        <span class="icon">share</span>
-                    </div>
+                <div class="commands">
+                    <span class="icon">share</span>
                 </div>
-                <div class="text markdown">
-                    {{{story.content}}}
-                </div>
-            </article>
-        </div>
-	</div>
+            </div>
+            <div class="text markdown">
+                {{{story.content}}}
+            </div>
+        </article>
+    </template>
     <script src="scripts/article.js" type="text/javascript"></script>
 </body>
 

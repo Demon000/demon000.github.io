@@ -71,8 +71,7 @@ var dTerm = new Vue(
       },
       13()
       {
-        var left = this.geometry['width'] - this.chars.length % this.geometry['width'] - 21;
-        for(var i = 0; i < left; i++)
+        while(this.chars.length % this.geometry['width'] > 0)
           this.printChar('&nbsp;');
       },
       32()

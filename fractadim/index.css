@@ -2,31 +2,25 @@ body, html
 {
 	margin: 0;
 	padding: 0;
-}
-#container, body
-{
 	text-align: center;
-	overflow-x: hidden;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
-#canvas
+#size
 {
-	display: inline-block;
-}
-input
-{
-	position: absolute;
-	bottom: 90px;
-	text-align: center;
-	display: inline-block;
 	width: 100%;
+	max-width: 600px;
+	height: 30px;
+	display: inline-block;
 	background: none;
 	border: none;
-	border-bottom: 1px solid #2196f3;
+	border-bottom: 2px solid #2196f3;
+	margin-top: 24px;
+
 }
-button
+#uploadbtn
 {
-	height: 55.5px;
-	width: 55.5px;
+	height: 55px;
+	width: 55px;
 	border-radius: 50%;
 	background: url(plus.png) no-repeat center center, #2196f3;
 	border: none;
@@ -35,11 +29,51 @@ button
 	right: 25px;
 	bottom: 25px;
 }
-#container
+#preview
 {
- max-height: calc(100vh - 200px);
+	border: none;
+	display: block;
+	width: 100%;
+	height: calc(100vh - 150px);
+	object-fit: contain;
 }
-#uploadimage
+#upload
 {
 	display: none;
+}
+canvas
+{
+	position: absolute;
+	display: none;
+}
+#history
+{
+	margin: auto;
+	margin-top: 94px;
+	width: 100%;
+	max-width: 600px;
+	text-align: center;
+}
+#history table
+{
+	display: block;
+	border: 1px solid #eee;
+	border-radius: 2px;
+}
+#history tr
+{
+	border-bottom: 1px solid #eee;
+}
+#history th
+{
+	background: #eee;
+	height: 60px;
+}
+#history img
+{
+	height: 60px;
+}
+#history .name
+{
+	width: 100%;
 }

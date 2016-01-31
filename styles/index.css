@@ -1,0 +1,316 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+@import url(icons/css/materialdesignicons.css);
+
+body
+{
+  overflow-x: hidden;
+}
+body.scrolled .contact
+{
+  opacity: 0;
+  height: 0;
+}
+body.scrolled .nav
+{
+  height: 60px;
+  line-height: 60px;
+  top: 0;
+
+  background: #fff;
+  color: rgba(0,0,0,0.87);
+  font-weight: 400;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+body.scrolled .nav .title
+{
+  font-size: 0;
+  padding: 0;
+  opacity: 0;
+}
+body.scrolled .nav .logo
+{
+  display: inline-block;
+  width: 50px;
+  height: 60px;
+}
+*
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+a
+{
+	outline: 0;
+	cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+}
+.mdi
+{
+  vertical-align: middle;
+}
+.justify-left
+{
+	margin-right: auto;
+}
+.justify-right
+{
+	margin-left: auto;
+}
+.contact
+{
+  position: fixed;
+  top: 0;
+
+  display: flex;
+
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  padding: 0 40px;
+
+  font-size: 14px;
+  color: rgba(255,255,255,0.66);
+  background: rgba(0, 0, 0, 0.15);
+
+  transition: all 0.25s ease-in-out;
+}
+.contact.hidden
+{
+  opacity: 0;
+  height: 0;
+}
+.contact > *
+{
+  padding: 0 12px;
+}
+.contact .mdi
+{
+  opacity: 0.5;
+  font-size: 18px;
+  margin-right: 6px;
+}
+.nav
+{
+	position: fixed;
+	top: 40px;
+  z-index: 10000;
+
+  height: 100px;
+	line-height: 100px;
+	width: 100%;
+	padding: 0 40px;
+
+	display: flex;
+
+	font-weight: 300;
+  color: #fff;
+
+  transition: all 0.25s ease-in-out;
+}
+.nav > *
+{
+	position: relative;
+	overflow: hidden;
+	padding: 0 20px;
+  transition: all 0.25s ease-in-out;
+}
+.nav > * .ink
+{
+	background: #fff;
+}
+.nav .title
+{
+	font-size: 27px;
+	font-weight: bold;
+}
+.nav .logo
+{
+  width: 0;
+  height: 0;
+  padding: 0;
+  background: url(../assets/logoblack.png) no-repeat center center / contain;
+}
+header
+{
+	height: 100vh;
+
+	color: #fff;
+	background: url(../assets/bg.jpg) no-repeat center center / cover;
+}
+header div
+{
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+	justify-content: center;
+
+	background: rgba(0, 0, 0, 0.5);
+}
+header .logo
+{
+  margin-top: auto;
+	width: 15%;
+}
+header .description
+{
+	text-align: center;
+	font-size: 23px;
+	font-weight: 300;
+	width: 70%;
+	max-width: 800px;
+}
+header .arrow
+{
+  font-size: 42px;
+  margin-top: auto;
+
+  animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-name: bounce;
+	transform-origin: center bottom;
+	animation-iteration-count: infinite;
+}
+.ink
+{
+  display: block;
+  position: absolute;
+
+  border-radius: 50%;
+  animation: ripple 0.25s ease-out;
+  transform: scale(0);
+
+  background: #000;
+  pointer-events: none;
+}
+section
+{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 0;
+}
+section .meta
+{
+  margin-bottom: 40px;
+  text-align: center;
+}
+section .meta .title
+{
+  font-weight: 300;
+  font-size: 34px;
+
+  margin-bottom: 20px;
+}
+section .meta .description
+{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.projects
+{
+  text-align: center;
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 0;
+  max-width: 1140px;
+}
+.projects > *
+{
+  font-size: 14px;
+}
+.project
+{
+  display: inline-block;
+  position: relative;
+  width: calc(100% / 3 - 3px);
+  margin: 0 0 3px 3px;
+  padding-bottom: calc(100% / 3 - 3px);
+
+  overflow: hidden;
+}
+.project img
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.project .cover
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 0;
+  height: 0;
+
+  display: flex;
+	flex-direction: column;
+  align-items: center;
+	justify-content: center;
+
+  opacity: 0;
+  border-radius: 50%;
+  background: #41baae;
+
+  transition: all 0.35s ease-out;
+
+  font-weight: 300;
+  color: #fff;
+}
+.project .cover .title
+{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.project .cover .description
+{
+  font-size: 13px;
+}
+
+.project:hover > .cover
+{
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  opacity: 0.75;
+}
+@keyframes ripple
+{
+  100%
+  {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@keyframes bounce
+{
+  from, 20%, 53%, 80%, to
+  {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.255, 1.000);
+    transform: translate3d(0,0,0);
+  }
+  40%, 43%
+  {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+  70%
+  {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+  90%
+  {
+    transform: translate3d(0,-4px,0);
+  }
+}

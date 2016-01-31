@@ -40,10 +40,15 @@ nav .logo
 
   background: url(../assets/logoblack.png) no-repeat center center / contain;
 }
+header
+{
+  background: url(../assets/bg.jpg) no-repeat center center / cover;
+  height: 100vh;
+  width: 100%;
+}
 main
 {
-  width: calc(100% / 3 * 2);
-
+  width: 100%;
   display: inline-block;
 
   padding: 32px 32px;
@@ -56,7 +61,7 @@ main > *
 }
 main article
 {
-  width: calc(50% - 32px);
+  width: calc(100% / 3 - 32px);
   display: inline-block;
 
   margin: 16px;
@@ -72,6 +77,8 @@ main article .cover
 
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
+
+  cursor: pointer;
 
   transition: all 0.25s ease 0s;
 }
@@ -101,20 +108,15 @@ main article .date
   padding-bottom: 20px;
   line-height: 13px;
 }
-main article .buttons
-{
-  height: 48px;
-  line-height: 48px;
-
-  padding: 0 32px;
-
-  border-top: 1px solid #eee;
-}
 main article .bar
 {
   height: 56px;
   line-height: 40px;
   padding: 8px 32px;
+
+  color: #616161;
+  font-size: 14px;
+  font-weight: 400;
 
   border-top: 1px solid #eee;
 }
@@ -126,64 +128,11 @@ main article .bar .author
 }
 main article .bar .name
 {
-  font-size: 14px;
-  font-weight: 400;
-  padding: 0 8px;
-  color: #616161;
+  padding: 0 0 0 8px;
 }
-main article .buttons > *
+main article .bar a
 {
-  position: relative;
-  float: right;
-
-  padding: 0 8px;
-  overflow: hidden;
-}
-main article img, main article .title
-{
-  cursor: pointer;
-}
-aside
-{
-  width: calc(100% / 3);
-  display: inline-block;
-
-  margin-top: 60px;
-  padding: 48px 32px;
-}
-aside article
-{
-  width: calc(100% - 32px);
-  height: 100px;
-
-  margin: 16px;
-  padding: 8px;
-
-  background: #fff;
-  border-radius: 2px;
-}
-aside article > *
-{
-  display: inline-block;
-  vertical-align: middle;
-}
-aside article img
-{
-  width: 84px;
-  height: 84px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-aside article .text
-{
-  padding: 16px;
-  line-height: 20px;
-  font-size: 13px;
-}
-aside article .date
-{
-  color: #716B71;
+  color: #2196f3;
 }
 .more
 {

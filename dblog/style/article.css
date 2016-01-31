@@ -1,21 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
-@import url(../scripts/highlight/styles/tomorrow.css);
-
-body > div
+@import url(../scripts/highlight/styles/material.css);
+body
 {
-    background-size: cover;
-    background-attachment: fixed;
-}
-body > div > div
-{
-    height: 100%;
-    padding: 16px;
-
-    background: rgba(0, 0, 0, 0.8);
+  background: #fff;
+  padding: 16px;
 }
 .back
 {
-  color: #fff;
+  color: #444;
   position: absolute;
   top: 16px;
   left: 16px;
@@ -24,7 +16,6 @@ body > div > div
 article
 {
   max-width: 900px;
-  min-height: 1200px;
   margin: 20vh auto 0 auto;
   background: #fff;
   border-radius: 2px;
@@ -135,11 +126,16 @@ article .meta img
   }
   article .text
   {
-    padding: 24px;
+    padding: 16px;
     width: 100%;
   }
-  body > div > div
+  body
   {
       padding: 0;
+  }
+
+  .back
+  {
+    color: #fff;
   }
 }

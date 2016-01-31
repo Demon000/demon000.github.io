@@ -4,15 +4,41 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="vue.js"></script>
 	<title>FractaDim</title>
 </head>
 <body>
-	<div id="container">
-		<canvas id="canvas"></canvas>
+	<canvas></canvas>
+	<img :src="curent.image || 'error.png'" id="preview">
+	<input @change="uploaded" id="upload" type="file" accept="image/*">
+	<button @click="uploadstart" id="uploadbtn"></button>
+	<div id="size">{{{ curent.size || 'Result'}}}</div>
+	<div id="history" v-if="history.length">
+		<table cellspacing="0" cellpadding="0">
+			<tr>
+				<th>
+					Image
+				</th>
+				<th class="name">
+					Filename
+				</th>
+				<th>
+					Fractal Dimension
+				</th>
+			</tr>
+			<tr v-for="o in history" track-by="$index">
+				<td>
+					<img :src="o.image">
+				</td>
+				<td class="name">
+					{{{o.name}}}
+				</td>
+				<td class="size">
+					{{{o.size}}}
+				</td>
+			</tr>
+		</table>
 	</div>
-	<input id="uploadimage" type="file" accept="image/*">
-	<button onclick="document.querySelector('#uploadimage').click()"></button>
-	<input type="text" id="text" readonly="readonly" placeholder="Result">
 	<script type="text/javascript" src="index.js"></script>
 </body>
 </html>
