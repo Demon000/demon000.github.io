@@ -1,6 +1,6 @@
 var nav = document.querySelector('.nav');
 var contact = document.querySelector('.contact');
-document.onscroll = function(e)
+function scrolled(e)
 {
   if(document.documentElement.scrollTop > window.innerHeight / 3)
   {
@@ -11,3 +11,4 @@ document.onscroll = function(e)
     document.body.classList.remove('scrolled')
   }
 }
+document.onscroll = document.onload = scrolled;
