@@ -397,8 +397,10 @@ section .more
 }
 .team .member
 {
+  vertical-align: top;
   font-weight: 300;
   width: 128px;
+  margin: 0 32px;
   display: inline-block;
 }
 .team .member img
