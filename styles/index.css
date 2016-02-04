@@ -243,8 +243,6 @@ section
   margin-left: auto;
   margin-right: auto;
   padding: 40px 0;
-
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 section .meta
 {
@@ -389,6 +387,35 @@ section .more
   width: 150%;
   height: 150%;
   opacity: 0.75;
+}
+.team
+{
+  max-width: 1140px;
+  margin: auto;
+
+  text-align: center;
+}
+.team .member
+{
+  font-weight: 300;
+  width: 128px;
+  display: inline-block;
+}
+.team .member img
+{
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.team .member .title
+{
+  font-size: 17px;
+  margin: 10px 0;
+}
+.team .member .description
+{
+  font-style: italic;
 }
 footer .bottom
 {
