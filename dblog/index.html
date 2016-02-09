@@ -17,9 +17,6 @@
         <nav>
             <a href="/" class="logo"></a>
         </nav>
-        <header>
-
-        </header>
         <main>
             <article v-for="article in collection" v-if="$index < limit">
                 <img class="cover" v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
