@@ -17,7 +17,7 @@
 
 <body>
     <template  v-if="loaded">
-        <a class="icon back" v-on:click="back();">arrow_back</a>
+        <a class="mdi mdi-arrow-left back" v-on:click="back();"></a>
         <article>
             <div class="cover">
                 <img :src="'data/' + story.id + '/cover.jpg'">
@@ -29,8 +29,8 @@
                     <p>{{{author.name}}}</p>
                     <p>{{{story.date}}}</p>
                 </div>
-                <div class="commands">
-                    <span class="icon">share</span>
+                <div>
+                  
                 </div>
             </div>
             <div class="text markdown">

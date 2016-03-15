@@ -1,6 +1,6 @@
 nav
 {
-  height: 60px;
+  height: 100px;
   width: 100%;
 
   position: fixed;
@@ -17,12 +17,13 @@ nav
 }
 nav + *
 {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 nav > *
 {
-  height: 60px;
-  line-height: 60px;
+  height: 100px;
+  line-height: 100px;
+  padding: 0 20px;
 
   display: inline-block;
   float: right;
@@ -34,7 +35,7 @@ nav > *
 }
 nav .logo
 {
-  width: 40px;
+  width: 50px;
 
   float: left;
 
@@ -48,7 +49,7 @@ header
 }
 main
 {
-  width: 100%;
+  max-width: 756px;
   display: inline-block;
 
   padding: 32px 32px;
@@ -61,10 +62,10 @@ main > *
 }
 main article
 {
-  width: calc(100% / 3 - 32px);
+  width: 100%;
   display: inline-block;
 
-  margin: 16px;
+  margin: 32px 0;
   background: #fff;
   border-radius: 2px;
   overflow: hidden;
@@ -72,7 +73,7 @@ main article
 main article .cover
 {
   width: 100%;
-  height: 240px;
+  max-height: 25vw;
   object-fit: cover;
 
   border-top-left-radius: 2px;
@@ -98,20 +99,14 @@ main article .text *
 }
 main article .title
 {
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 24px;
+  line-height: 38px;
   font-weight: 300;
-}
-main article .date
-{
-  color: #716B71;
-  padding-bottom: 20px;
-  line-height: 13px;
 }
 main article .bar
 {
-  height: 56px;
-  line-height: 40px;
+  height: 72px;
+  line-height: 56px;
   padding: 8px 32px;
 
   color: #616161;
@@ -124,6 +119,7 @@ main article .bar .author
 {
   height: 40px;
   width: 40px;
+  margin: 8px 0;
   border-radius: 50%;
 }
 main article .bar .name
@@ -139,9 +135,10 @@ main article .bar a
   width: 100%;
   text-align: center;
 }
-.more > .icon
+.more > .mdi
 {
   font-size: 32px;
+  color: #666;
 }
 @media (max-width: 1024px)
 {

@@ -1,0 +1,187 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300);
+body, html
+{
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+
+	-webkit-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+
+  	cursor: default !important;
+}
+body
+{
+	height: 100vh;
+	overflow: hidden;
+
+	background: url("../assets/bg.jpg") no-repeat center center / cover;
+}
+.window
+{
+
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	opacity: 0.95;
+
+	position: fixed;
+}
+.window.fullscreen
+{
+	top: 0 !important;
+	left: 0 !important;
+	height: calc(100% - 36px) !important;
+	width: 100% !important;
+}
+.window.leftscreen
+{
+	top: 0 !important;
+	left: 0 !important;
+	height: calc(100% - 36px) !important;
+	width: 50% !important;
+}
+.window.rightscreen
+{
+	top: 0 !important;
+	left: 50% !important;
+	height: calc(100% - 36px) !important;
+	width: 50% !important;
+}
+.window.minimized
+{
+	display: none;
+}
+.window.active
+{
+	opacity: 1;
+}
+.window > nav
+{
+	list-style-type: none;
+	font-size: 0;
+
+	height: 36px;
+	background: #FFF;
+	border-bottom: 1px solid #eee;
+}
+.window > nav *
+{
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+}
+.window > nav img
+{
+	width: 36px;
+}
+.window > nav img:first-child
+{
+	width: 24px;
+	height: 24px;
+	margin: 6px;
+}
+.window > nav span
+{
+	font-size: 16px;
+
+	text-align: center;
+	line-height: 36px;
+	width: calc(100% - 144px);
+}
+.window > nav span:active
+{
+	cursor: move;
+}
+.window > nav .minimize
+{
+	background: url("../assets/minimize.png") no-repeat center center;
+}
+.window > nav .maximize
+{
+	background: url("../assets/maximize.png") no-repeat center center;
+}
+.window > nav .close
+{
+	background: url("../assets/close.png") no-repeat center center;
+}
+.window > main, .window > iframe
+{
+	width: 100%;
+	height: calc(100% - 37px);
+
+	background: #FFF;
+}
+.window > iframe
+{
+	border-style: none;
+}
+.window > .resize
+{
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: url("../assets/resize.png") no-repeat center center;
+}
+#bar
+{
+	height: 32px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	color: #FFF;
+}
+#bar *
+{
+	height: 32px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+#bar > *
+{
+	padding: 0 4px;
+}
+#bar #menu, #bar #user
+{
+	height: 28px;
+	width: 28px;
+	margin: 2px;
+}
+#bar #menu
+{
+	background: url("../assets/menu.png") no-repeat center center / contain;
+}
+#bar #notification
+{
+	position: absolute;
+	right: 0;
+}
+#bar #apps img
+{
+	box-sizing: border-box;
+	height: 32px;
+	padding: 2px 4px;
+
+	transition: border 0.25s;
+}
+#bar #apps img.active
+{
+	border-bottom: 2px solid #FFF;
+	opacity: 1;
+}
+#bar #apps img.minimized
+{
+	border: 0;
+	opacity: 0.5;
+}
+#bar #clock
+{
+	line-height: 32px;
+	font-weight: 400;
+}

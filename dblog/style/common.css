@@ -1,15 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-.icon
-{
-  height: 100%;
-
-  font-family: 'Material Icons';
-  font-size: 24px;
-
-  color: #716B71;
-  cursor: pointer;
-}
+@import url(icons/css/materialdesignicons.css);
 *
 {
   padding: 0;
@@ -36,10 +26,13 @@ body
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+
+  text-align: center;
 }
 body > *
 {
   font-size: initial;
+  text-align: initial;
 }
 pre
 {

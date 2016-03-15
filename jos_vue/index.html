@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>JavaScript Operating System</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/lodash.js"></script>
+	<meta charset="utf-8">	
+</head>
+<body @mousemove="ondrag($event);" @mouseup="enddrag($event);">
+<div v-for="w in ws" :style="w.style" :class="['window', w.state, w.size]" @mousedown="activate(w);">
+	<nav>
+		<img :src="w.icon">
+		<span class="title" @mousedown="startdrag(w, $event);" @dblclick="maximize(w);">{{{w.title}}}</span>
+		<img class="minimize" @click="minimize(w);">
+		<img class="maximize" @click="maximize(w);">
+		<img class="close" @click="remove(w);">
+	</nav>
+	<main v-if="w.content">
+		{{{w.content}}}
+	</main>
+	<iframe v-if="w.src" :src="w.src">
+		
+	</iframe>
+</div>
+<nav id="bar">
+		<img id="menu">
+		<div id="apps">
+			<img v-for="w in ws" :src="w.icon" :class="[w.state]" @click="minimize(w);">
+		</div>
+		<div id="notification">
+			<span id="clock">
+				00:00
+			</span>
+			<img id="user" src="assets/user.png">
+		</div>
+	</nav>
+<script type="text/javascript" src="js/jos.js"></script>
+</body>
+</html>

@@ -16,13 +16,15 @@
     <template v-if="loaded">
         <nav>
             <a href="/" class="logo"></a>
+            <a href="#">CONTACT</a>
+            <a href="#">CATEGORIES</a>
         </nav>
         <main>
             <article v-for="article in collection" v-if="$index < limit">
                 <img class="cover" v-bind:src="'data/' + article.id + '/cover.jpg'" v-on:click="view(article)">
                 <div class="text">
                     <a class="title" :href="'article.html#' + article.id">{{{ article.title }}}</a>
-                    <p class="date">{{{ article.date }}}</p>
+
                     <p>
                         {{{ article.preview }}}
                     </p>
@@ -31,14 +33,16 @@
                     <img class="author" :src="authors[article.author].image">
                     <span class="name">by {{{ authors[article.author].name }}}</span>
                     <span>in</span>
-                    <a :href="'category.html#' + category" v-for="category in article.categories">
-                      {{{$index < article.categories.length - 1 ? category + ', ' : category}}}
+                    <a :href="'category.html#' + article.categories[0]">
+                      {{{ article.categories[0] }}}
                     </a>
+                    <span>at</span>
+                    <span class="date">{{{ article.date }}}</span>
                 </div>
             </article>
             <div class="more" v-if="limit < collection.length">
-                <a class="icon" v-on:click="increase">expand_more</a>
-			</div>
+                <a class="mdi mdi-chevron-down" v-on:click="increase"></a>
+			      </div>
         </main>
     </template>
     <script src="scripts/blog.js" type="text/javascript"></script>
