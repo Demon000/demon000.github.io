@@ -1,0 +1,82 @@
+.Grid
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.Grid.\-top {align-items: flex-start;}
+.Grid.\-middle {align-items: center;}
+.Grid.\-bottom {align-items: flex-end;}
+.Grid.\-stretch {align-items: stretch;}
+.Grid.\-baseline {align-items: baseline;}
+.Grid.\-left {justify-content: flex-start;}
+.Grid.\-center {justify-content: center;}
+.Grid.\-right {justify-content: flex-end;}
+.Grid.\-between {justify-content: space-between;}
+.Grid.\-around {justify-content: space-around;}
+
+.Cell
+{
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.Cell.\-fill {width: 0; min-width: 0; flex-grow: 1;}
+.Cell.\-1t {width: calc(100% / 12 * 1);}
+.Cell.\-2t {width: calc(100% / 12 * 2);}
+.Cell.\-3t {width: calc(100% / 12 * 3);}
+.Cell.\-4t {width: calc(100% / 12 * 4);}
+.Cell.\-5t {width: calc(100% / 12 * 5);}
+.Cell.\-6t {width: calc(100% / 12 * 6);}
+.Cell.\-7t {width: calc(100% / 12 * 7);}
+.Cell.\-8t {width: calc(100% / 12 * 8);}
+.Cell.\-9t {width: calc(100% / 12 * 9);}
+.Cell.\-10t {width: calc(100% / 12 * 10);}
+.Cell.\-11t {width: calc(100% / 12 * 11);}
+.Cell.\-12t {width: calc(100% / 12 * 12);}
+
+@media (min-width: 768px)
+{
+    .Cell.\-1s {width: calc(100% / 12 * 1);}
+    .Cell.\-2s {width: calc(100% / 12 * 2);}
+    .Cell.\-3s {width: calc(100% / 12 * 3);}
+    .Cell.\-4s {width: calc(100% / 12 * 4);}
+    .Cell.\-5s {width: calc(100% / 12 * 5);}
+    .Cell.\-6s {width: calc(100% / 12 * 6);}
+    .Cell.\-7s {width: calc(100% / 12 * 7);}
+    .Cell.\-8s {width: calc(100% / 12 * 8);}
+    .Cell.\-9s {width: calc(100% / 12 * 9);}
+    .Cell.\-10s {width: calc(100% / 12 * 10);}
+    .Cell.\-11s {width: calc(100% / 12 * 11);}
+    .Cell.\-12s {width: calc(100% / 12 * 12);}
+}
+@media (min-width: 992px)
+{
+
+    .Cell.\-1m {width: calc(100% / 12 * 1);}
+    .Cell.\-2m {width: calc(100% / 12 * 2);}
+    .Cell.\-3m {width: calc(100% / 12 * 3);}
+    .Cell.\-4m {width: calc(100% / 12 * 4);}
+    .Cell.\-5m {width: calc(100% / 12 * 5);}
+    .Cell.\-6m {width: calc(100% / 12 * 6);}
+    .Cell.\-7m {width: calc(100% / 12 * 7);}
+    .Cell.\-8m {width: calc(100% / 12 * 8);}
+    .Cell.\-9m {width: calc(100% / 12 * 9);}
+    .Cell.\-10m {width: calc(100% / 12 * 10);}
+    .Cell.\-11m {width: calc(100% / 12 * 11);}
+    .Cell.\-12m {width: calc(100% / 12 * 12);}
+}
+@media (min-width: 1200px)
+{
+
+    .Cell.\-1l {width: calc(100% / 12 * 1);}
+    .Cell.\-2l {width: calc(100% / 12 * 2);}
+    .Cell.\-3l {width: calc(100% / 12 * 3);}
+    .Cell.\-4l {width: calc(100% / 12 * 4);}
+    .Cell.\-5l {width: calc(100% / 12 * 5);}
+    .Cell.\-6l {width: calc(100% / 12 * 6);}
+    .Cell.\-7l {width: calc(100% / 12 * 7);}
+    .Cell.\-8l {width: calc(100% / 12 * 8);}
+    .Cell.\-9l {width: calc(100% / 12 * 9);}
+    .Cell.\-10l {width: calc(100% / 12 * 10);}
+    .Cell.\-11l {width: calc(100% / 12 * 11);}
+    .Cell.\-12l {width: calc(100% / 12 * 12);}
+}

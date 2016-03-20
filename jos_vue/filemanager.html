@@ -7,11 +7,16 @@
 </head>
 <body>
 <script type="text/javascript">
-	window.onclick = function(e)
+	window.onmousedown = function(e)
 	{
-		console.log('ouch!');
+		var w = window.frameElement.parentElement;
+		var ev = new MouseEvent('mousedown', 
+			{
+				'view': w,
+				'bubbles': true,
+    			'cancelable': true,
+			});
 	}
-	console.log(window.parent);
 </script>
 </body>
 </html>

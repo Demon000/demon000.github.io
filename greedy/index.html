@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Greedy Flexbox Grid</title>
+        <link rel="stylesheet" href="github-markdown.css">
+        <link rel="stylesheet" href="greedy.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body class="markdown-body">
+        <h1>Greedy</h1>
+        <h2>Details</h2>
+        <p>
+            A simple CSS grid build with flexbox.
+        </p>
+        <ul>
+            <li>
+                <b>Simple</b>: Has only 2 base classes and a handful of modifier classes.
+            </li>
+            <li>
+                <b>Powerful</b>: Contains modifiers that are only applied if the window meets the minimum width requirement.
+            </li>
+            <li>
+                <b>Modern</b>: Uses <code>calc()</code> and flexbox and should work on all modern browsers.
+            </li>
+        </ul>
+        <h2>Installation</h2>
+        <p>
+            Download the script and include it in your project.
+        </p>
+        <code>
+                &lt;link rel="stylesheet" href="css/greedy.css"&gt;
+        </code>
+        <h2>Usage</h2>
+        <h3><code>Grid</code> modifier classes</h3>
+        <span>Modifiers for <code>align-items:</code></span>
+        <ul>
+            <li><code>-top</code></li>
+            <li><code>-middle</code></li>
+            <li><code>-bottom</code></li>
+            <li><code>-stretch</code></li>
+            <li><code>-baseline</code></li>
+        </ul>
+        <span>Modifiers for <code>justify-content:</code></span>
+        <ul>
+            <li><code>-left</code></li>
+            <li><code>-center</code></li>
+            <li><code>-right</code></li>
+            <li><code>-between</code></li>
+            <li><code>-around</code></li>
+        </ul>
+        <h3><code>Cell</code> modifier classes</h3>
+        <span>General modifiers</span>
+        <ul>
+            <li><code>-fill</code>(fills the remaining width)</li>
+        </ul>
+        <span>Modifiers for <code>min-width < 768px</code>(tiny)</span>
+        <ul>
+            <li><code>-1t</code>(1 / 12 of the width of the container)</li>
+            <li><code>-2t</code>(2 / 12 of the width)</li>
+            <li>...</li>
+            <li><code>-12t</code>(12 / 12 of the width</li>
+        </ul>
+        <span>Modifiers for <code>min-width < 992px</code>(small)</span>
+        <ul>
+            <li><code>-1s</code></li>
+            <li><code>-2s</code></li>
+            <li>...</li>
+            <li><code>-12s</code></li>
+        </ul>
+        <span>Modifiers for <code>min-width < 1200px</code>(medium)</span>
+        <ul>
+            <li><code>-1m</code></li>
+            <li><code>-2m</code></li>
+            <li>...</li>
+            <li><code>-12m</code></li>
+        </ul>
+        <span>Modifiers for <code>min-width > 1199px</code>(large)</span>
+        <ul>
+            <li><code>-1l</code></li>
+            <li><code>-2l</code></li>
+            <li>...</li>
+            <li><code>-12l</code></li>
+        </ul>
+        <h2>Examples</h2>
+        <h3>#1</h3>
+        <p>
+            Cells will get full width when screen size is under 768px(tiny), and half width when screen size is bigger than 991px(medium).
+        </p>
+        <pre>
+                &lt;div class=&quot;Grid&quot;&gt;
+                    &lt;div class=&quot;Cell -12t -6m red&quot;&gt;
+                        a
+                    &lt;/div&gt;
+                    &lt;div class=&quot;Cell -12t -6m blue&quot;&gt;
+                        b
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        </pre>
+        <div class="Grid">
+            <div class="Cell -12t -6m red">
+                    a
+            </div>
+            <div class="Cell -12t -6m blue">
+                    b
+            </div>
+        </div>
+        <h3>#2</h3>
+        <p>
+            First cell will get 8/12 width when screen size is less than 768px(tiny), 6/12 width when screen size is less than 992px(medium) and 4/12 when screen size is bigger than 1200px(large).
+            The second cell will always fill the remaining space.
+        </p>
+        <pre>
+            &lt;div class=&quot;Grid&quot;&gt;
+                &lt;div class=&quot;Cell -8t -6s -4l red&quot;&gt;
+                    a
+                &lt;/div&gt;
+                &lt;div class=&quot;Cell -fill blue&quot;&gt;
+                    b
+                &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+        <div class="Grid">
+            <div class="Cell -8t -6s -4l red">
+                    a
+            </div>
+            <div class="Cell -fill blue">
+                    b
+            </div>
+        </div>
+        <h3>#3</h3>
+        <p>
+            Cells will get 6/12 width of the Grid if screen size is tiny and 3/12 is screen size is large.
+        </p>
+        <pre>
+            &lt;div class=&quot;Grid&quot;&gt;
+                &lt;div class=&quot;Cell -6t -3l red&quot;&gt;
+                    a
+                &lt;/div&gt;
+                &lt;div class=&quot;Cell -6t -3l blue&quot;&gt;
+                    b
+                &lt;/div&gt;
+                &lt;div class=&quot;Cell -6t -3l green&quot;&gt;
+                    a
+                &lt;/div&gt;
+                &lt;div class=&quot;Cell -6t -3l lime&quot;&gt;
+                    b
+                &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+        <div class="Grid">
+            <div class="Cell -6t -3l red">
+                    a
+            </div>
+            <div class="Cell -6t -3l blue">
+                    b
+            </div>
+            <div class="Cell -6t -3l green">
+                    c
+            </div>
+            <div class="Cell -6t -3l lime">
+                    d
+            </div>
+        </div>
+    </body>
+</html>
