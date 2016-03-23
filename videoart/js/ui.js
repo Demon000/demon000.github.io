@@ -12,3 +12,7 @@ function scrolled(e)
   }
 }
 document.onscroll = document.onload = scrolled;
+function togglenav()
+{
+	document.querySelector('#nav').classList.toggle('active');
+}

@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6
 {
   font-weight: 400;
 }
+
 .button
 {
   height: 40px;
@@ -106,7 +107,7 @@ a
   font-size: 18px;
   margin-right: 6px;
 }
-.nav
+#nav
 {
 	position: absolute;
 	top: 40px;
@@ -124,28 +125,31 @@ a
 
   transition: all 0.25s ease-in-out;
 }
-.nav > *
+#nav > *
 {
+  display: block;
+  height: 80px;
+  line-height: 80px;
 	position: relative;
 	overflow: hidden;
 	padding: 0 20px;
   transition: all 0.25s ease-in-out;
 }
-.nav > * .ink
+#nav > * .ink
 {
 	background: #fff;
 }
-.nav .title
+#nav .title
 {
 	font-size: 27px;
 	font-weight: bold;
 }
-.nav .subtitle
+#nav .subtitle
 {
 	font-size: 14px;
 	font-weight: bold;
 }
-.nav .logo
+#nav .logo
 {
   width: 0;
   height: 0;
@@ -157,7 +161,7 @@ header
 	height: 100vh;
 
 	color: #fff;
-	background: url(../assets/bg2.jpg) no-repeat center center / cover;
+	background: url(../assets/bg4.jpg) no-repeat center center / cover;
 }
 header > div
 {
@@ -174,8 +178,9 @@ header .description
 	text-align: center;
 	font-size: 23px;
 	font-weight: 300;
-	width: 70%;
-	max-width: 800px;
+	width: 100%;
+  padding: 16px;
+	max-width: 788px;
 }
 header .arrow
 {
@@ -236,6 +241,13 @@ main section > .meta
   margin: 20px 0;
   text-align: center;
 }
+main section > *
+{
+  padding: 20px 16px;
+  max-width: 788px;
+  width: 100%;
+  margin: auto;
+}
 main section .meta .title
 {
   font-weight: 300;
@@ -248,26 +260,15 @@ main section .meta .description
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  max-width: 756px;
   margin: auto;
-}
-main section .details
-{
-  width: 100%;
-  max-width: 756px;
-  margin: auto;
-  padding: 20px 0;
 }
 main section .more
 {
-  padding: 20px 0;
-
   text-align: center;
 }
 .technologies
 {
   font-size: 0;
-  margin: auto;
   max-width: 1140px;
   text-align: center;
 }
@@ -478,4 +479,51 @@ footer .bottom
   {
     transform: translate3d(0,-4px,0);
   }
+}
+#viewnav
+{
+  display: none;
+}
+@media(max-width: 720px)
+{
+  .contact
+  {
+    display: none;
+  }
+  .project
+  {
+    margin: 0 16px 16px 16px;
+    width: calc(100% - 32px);
+    height: calc(100vw - 32px);
+  }
+  #nav
+  {
+    display: block;
+    top: 0;
+    height: 80px;
+    z-index: 99999999;
+    overflow: hidden;
+  }
+  #nav.active
+  {
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  #nav > *
+  {
+    width: 100%;
+    text-align: center;
+  }
+
+  #viewnav
+  {
+    display: block;
+    position: absolute;
+    line-height: 80px;
+    right: 0;
+    font-size: 32px;
+    color: #fff;
+    z-index: 999999999;
+  }
+
 }
