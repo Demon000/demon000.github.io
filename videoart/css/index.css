@@ -92,11 +92,6 @@ a
 
   transition: all 0.25s ease-in-out;
 }
-.contact.hidden
-{
-  opacity: 0;
-  height: 0;
-}
 .contact > *
 {
   padding: 0 12px;
@@ -233,20 +228,19 @@ main section
 {
   margin-left: auto;
   margin-right: auto;
-  padding: 40px 0;
+  padding: 20px 0;
   width: 100%;
-}
-main section > .meta
-{
-  margin: 20px 0;
-  text-align: center;
 }
 main section > *
 {
-  padding: 20px 16px;
+  padding: 10px 16px;
   max-width: 788px;
   width: 100%;
   margin: auto;
+}
+main section > .meta
+{
+  text-align: center;
 }
 main section .meta .title
 {
@@ -259,8 +253,11 @@ main section .meta .description
 {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
-  margin: auto;
+  font-weight: 400;  
+}
+main section .details
+{
+  padding: 10px 48px;
 }
 main section .more
 {
@@ -527,7 +524,22 @@ footer .bottom
   }
   header .description
   {
-    font-size: 21px;
+    font-size: 4.5vw;
   }
-
+  footer .top
+  {
+    flex-direction: column;
+    padding: 0;
+  }
+  footer .top section
+  {
+    width: 100%;
+    padding: 16px;
+  }
+  footer .bottom
+  {
+    padding: 16px;
+    height: auto;
+    line-height: 28px;
+  }
 }
