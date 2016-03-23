@@ -525,5 +525,9 @@ footer .bottom
     color: #fff;
     z-index: 999999999;
   }
+  header .description
+  {
+    font-size: 21px;
+  }
 
 }
