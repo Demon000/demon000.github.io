@@ -68,44 +68,44 @@
 </div>
 <div class="settings">
 	<div>
-		<label>Width</label>
+		<span>Width</span>
 		<input type="text" v-model="view.width"></input>
 	</div>
 	<div>
-		<label>Height</label>
+		<span>Height</span>
 		<input type="text" v-model="view.height"></input>
 	</div>
 	<div>
-		<label>Background color</label>
+		<span>Background</span>
 		<input type="text" v-model="view.background"></input>
 	</div>
 	<div>
-		<label>Logo Width</label>
+		<span>Logo size</span>
 		<input type="text" v-model="logo.height"></input>
 	</div>
 	<div>
-		<label>Logo color</label>
+		<span>Logo color</span>
 		<input type="text" v-model="logo.fill"></input>
 	</div>
 	<div>
-		<label>Text size</label>
+		<span>Text size</span>
 		<input type="text" v-model="text.fontSize"></input>
 	</div>
 	<div>
-		<label>Font family</label>
+		<span>Font family</span>
 		<input type="text" v-model="text.fontFamily"></input>
 	</div>
 	<div>
-		<label>Text color</label>
+		<span>Text color</span>
 		<input type="text" v-model="text.color"></input>
 	</div>
 	<div>
-		<label>Text</label>
+		<span>Text</span>
 		<textarea v-model="content"></textarea>
 	</div>
-	<div>
+	<div class="generate">
 		<button @click="generate">
-			Generate!
+			GENERATE
 		</button>
 		<p>(you need to add .png to the filename yourself)</p>
 	</div>

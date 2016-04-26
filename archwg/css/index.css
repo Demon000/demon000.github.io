@@ -2,6 +2,7 @@
 {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 body
 {
@@ -19,6 +20,56 @@ body
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.3);
 	color: #ededed;
+	padding: 8px;
+	border-radius: 2px;
 }
+.settings span
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	line-height: 28px;
+	color: #fff;
+	width: 128px;
+	display: inline-block;
+	vertical-align: top;
+}
+.settings input[type=text], .settings textarea
+{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #777;
+	color: #fff;
+	font-size: 12px;
+	line-height: 28px;
+	transition: all 0.25s ease-out;
+}
+.settings input[type=text]:focus, .settings textarea:focus
+{
+	border-bottom: 2px solid #fff;
+}
+.generate
+{
+	text-align: center;
+	margin: 16px 0;
+}
+.generate button
+{
+	color: #000;
+	background: #fff;
+	padding: 4px 20px;
+	height: 32px;
+	border-radius: 2px;
+	border: none;
+	margin-bottom: 8px;
+	font-size: 15px;
+	vertical-align: middle;
+	outline: 0;
+	cursor: pointer;
+}
+.generate p
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	line-height: 18px;}
