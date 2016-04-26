@@ -30,6 +30,7 @@ var wg = new Vue({
 	watch:
 	{
 		'logo.height': 'settext',
+		'view.height': 'settext',
 	},
 	ready() {
 		this.settext();
