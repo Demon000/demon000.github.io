@@ -1,0 +1,24 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	overflow: hidden;
+}
+.view
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+.settings
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	color: #ededed;
+}

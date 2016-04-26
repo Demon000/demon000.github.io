@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arch Wallpaper Generator</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/rh.js"></script>
+</head>
+<body>
+	<div class="view" :style="view">
+		<svg :style="logo" class="logo" xmlns="http://www.w3.org/2000/svg"
+		width="5.92981in" height="5.92981in"
+		viewBox="0 0 427 427">
+		<path id="Selection"
+		stroke-width="0"
+		d="M 222.00,19.00
+		C 222.00,19.00 235.60,51.00 235.60,51.00
+		235.60,51.00 273.26,134.00 273.26,134.00
+		273.26,134.00 307.74,202.00 307.74,202.00
+		307.74,202.00 338.31,261.00 338.31,261.00
+		338.31,261.00 362.31,306.00 362.31,306.00
+		362.31,306.00 376.00,333.00 376.00,333.00
+		376.00,333.00 340.00,317.00 340.00,317.00
+		340.00,317.00 324.00,313.00 324.00,313.00
+		338.51,319.29 359.48,334.39 372.00,344.40
+		376.36,347.89 387.57,356.45 390.67,360.04
+		394.07,363.97 401.75,379.39 404.86,385.00
+		404.86,385.00 427.00,427.00 427.00,427.00
+		420.88,425.21 415.55,421.35 410.00,418.30
+		410.00,418.30 377.00,400.31 377.00,400.31
+		355.78,388.83 322.89,374.30 300.00,366.67
+		287.93,362.64 272.52,357.69 260.00,356.00
+		260.00,356.00 262.00,334.00 262.00,334.00
+		262.00,334.00 262.00,324.00 262.00,324.00
+		261.97,305.60 254.72,280.09 242.70,266.00
+		239.33,262.04 234.42,257.20 230.00,254.47
+		214.74,245.05 198.60,250.36 187.17,263.00
+		173.63,277.99 166.24,302.98 166.00,323.00
+		165.90,332.02 166.18,337.04 167.48,346.00
+		167.97,348.40 169.36,353.17 167.48,355.02
+		166.10,356.19 152.74,358.92 150.00,359.63
+		150.00,359.63 112.00,372.05 112.00,372.05
+		92.36,379.39 61.29,393.72 43.00,403.86
+		43.00,403.86 19.00,417.00 19.00,417.00
+		13.49,420.15 5.81,425.16 0.00,427.00
+		0.00,427.00 20.14,389.00 20.14,389.00
+		20.14,389.00 57.69,321.00 57.69,321.00
+		57.69,321.00 117.74,209.00 117.74,209.00
+		117.74,209.00 142.75,160.00 142.75,160.00
+		142.75,160.00 155.00,135.00 155.00,135.00
+		155.00,135.00 169.00,144.66 169.00,144.66
+		177.60,150.50 199.50,163.29 209.00,166.00
+		209.00,166.00 174.00,136.00 174.00,136.00
+		171.41,133.42 163.31,125.97 162.35,123.00
+		161.35,119.92 163.91,115.73 165.24,113.00
+		165.24,113.00 175.14,91.00 175.14,91.00
+		175.14,91.00 202.58,25.00 202.58,25.00
+		202.58,25.00 213.00,0.00 213.00,0.00
+		213.00,0.00 222.00,19.00 222.00,19.00 Z" />
+	</svg>
+	<p class="text" :style="text">{{{content}}}</p>
+	<style type="text/css">
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+</div>
+<div class="settings">
+	<div>
+		<label>Width</label>
+		<input type="text" v-model="view.width"></input>
+	</div>
+	<div>
+		<label>Height</label>
+		<input type="text" v-model="view.height"></input>
+	</div>
+	<div>
+		<label>Background color</label>
+		<input type="text" v-model="view.background"></input>
+	</div>
+	<div>
+		<label>Logo Width</label>
+		<input type="text" v-model="logo.height"></input>
+	</div>
+	<div>
+		<label>Logo color</label>
+		<input type="text" v-model="logo.fill"></input>
+	</div>
+	<div>
+		<label>Text size</label>
+		<input type="text" v-model="text.fontSize"></input>
+	</div>
+	<div>
+		<label>Font family</label>
+		<input type="text" v-model="text.fontFamily"></input>
+	</div>
+	<div>
+		<label>Text color</label>
+		<input type="text" v-model="text.color"></input>
+	</div>
+	<div>
+		<label>Text</label>
+		<textarea v-model="content"></textarea>
+	</div>
+	<div>
+		<button @click="generate">
+			Generate!
+		</button>
+	</div>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
