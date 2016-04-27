@@ -11,7 +11,7 @@ body {
 	font-family: Roboto, sans-serif;
 }
 .view, .settings {
-	position:absolute
+	position: absolute;
 }
 .view {
 	top: 50%;
