@@ -1,0 +1,145 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+.icon
+{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.25s ease-out;
+}
+a
+{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+body
+{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.search
+{
+    text-align: center;
+    max-width: 512px;
+}
+.search > *
+{
+    margin: 4px;
+}
+.search h1
+{
+    font-size: 42px;
+    font-weight: 300;
+    color: #009688;
+}
+.search h2
+{
+    text-align: right;
+    font-size: 12px;
+    font-weight: 300;
+    color: #555;
+}
+.search input
+{
+    width: 100%;
+    display: block;
+    margin: 16px auto;
+    border: none;
+    background: transparent;
+    line-height: 32px;
+    border-bottom: 1px solid #888;
+    width: 256px;
+}
+.search input:focus
+{
+    border-bottom: 2px solid #009688;
+}
+.search .icon
+{
+    color: #666;
+}
+.search .icon:hover
+{
+    color: #009688;
+}
+.results
+{
+    max-width: 756px;
+    margin: 0 auto;
+}
+.results > div
+{
+    padding: 8px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+.results > div p,.results > div a
+{
+    padding: 4px;
+}
+.results > div .title
+{
+    font-size: 17px;
+    cursor: pointer;
+}
+.results > div .title:hover
+{
+    color: #009688;
+}
+.results > div .description
+{
+    font-size: 15px;
+    line-height: 32px;
+}
+.results > div .searchmatch
+{
+    color: #222;
+    border-bottom: 3px dotted #009688;
+}
+.expand-transition
+{
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+.expand-enter, .expand-leave
+{
+    height: 0;
+    opacity: 0;
+}
+.error
+{
+    position: relative;
+    background: #f44336;
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px;
+    border-radius: 2px;
+}
+.credits
+{
+    text-align: right;
+    line-height: 32px;
+    color: #999;
+    font-size: 11px;
+}

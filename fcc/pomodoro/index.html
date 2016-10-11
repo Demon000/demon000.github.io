@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pomodoro for FCC</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Roboto:400,500,300'>
+	<script src="js/vue.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="numbers">
+    <div>
+      <span class="title">Break Length</span>
+      <button v-on:click="setbreak(-60)">&ndash;	</button>
+      <span>{{{break / 60}}}</span>
+       <button v-on:click="setbreak(60)">+</button>
+      <span class="subtitle">minutes</span>
+    </div>
+    <div>
+      <span class="title">Work Length</span>
+      <button v-on:click="setwork(-60)">&ndash;</button>
+      <span>{{{work / 60}}}</span>
+      <button v-on:click="setwork(60)">+</button>
+      <span class="subtitle">minutes</span>
+    </div>
+    </div>
+  </div>
+  <div class="timer" v-on:click="click">
+    <div class="time">
+      {{{
+        (now / 60 < 10 ? '0' + Math.floor(now / 60) : Math.floor(now / 60)) + ':' +
+        (now % 60 < 10 ? '0' + now % 60 : now % 60)
+      }}}
+    </div>
+    <div class="running">
+      {{{running}}}
+    </div>
+	<script src="js/index.js" type="text/javascript"></script>
+</body>
+</html>

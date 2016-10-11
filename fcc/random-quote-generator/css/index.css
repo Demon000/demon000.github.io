@@ -1,0 +1,58 @@
+body 
+{
+  margin: 0;
+  padding: 0;
+  
+  height: 100vh;
+  
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  
+  background: url(http://files.catbox.moe/0d87b9.jpg) no-repeat center center / cover;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body > *
+{
+  max-width: 70%;
+  margin: 8px 0;
+}
+.title
+{
+  font-size: 2.2em;
+}
+.quote
+{
+  padding: 16px;
+  font-style: italic;
+  font-size: 1.1em;
+  border-left: 2px solid #fff;
+}
+.author
+{
+  width: 60%;
+  text-align: right;
+}
+.buttons
+{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+button
+{
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 8px 16px;
+  transition: all 0.25s ease-in-out;
+}
+button:hover
+{
+  background: #fff;
+  color: #2f325d;
+}

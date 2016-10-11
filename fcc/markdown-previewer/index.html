@@ -1,0 +1,17 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="css/github-markdown.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/vue.js"></script>
+	<script type="text/javascript" src="js/commonmark.js"></script>
+</head>
+<body>
+  <main>
+    <div class="editor">
+      <textarea v-model="input"></textarea>
+    </div>
+    <div class="preview markdown-body">
+      {{{parsed}}}
+    </div>
+  </main>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wikipedia Viewer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script src="js/superagent.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="search">
+        <h1>Wikipedia Viewer</h1>
+        <p class="credits">by Demon000</p>
+        <input type="text" v-model="query" @keyup.enter="search" debounce="500">
+        <p class="error" v-show="error" transition="expand">The search returned no results!</p>
+        <a class="icon" @click="search">search</a>
+        <a class="icon" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">shuffle</a>
+    </div>
+    <div class="results">
+        <div v-for="result in results" transition="expand">
+            <a class="title" :href="result.link" target="_blank">
+                {{{result.title}}}
+            </a>
+            <p class="description">
+                {{{result.description}}}
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

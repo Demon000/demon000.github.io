@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+main
+{
+  width: 100%;
+  max-width: calc(756px * 2);
+  height: 100vh;
+  
+  display: flex;
+}
+.editor, .preview
+{
+  width: 50%;
+  height: 100%;
+  padding: 16px;
+}
+.editor textarea
+{
+  height: 100% !important;
+  width: 100% !important;
+  resize: none;
+
+  
+  font-size: 14px;
+  line-height: 24px;
+}
