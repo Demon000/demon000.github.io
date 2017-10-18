@@ -42,10 +42,10 @@
 
     }
 
-    function GameTable(options) {
+    function GameTable(o) {
         var gt = this;
 
-        var size = options.size;
+        var size = o.size;
 
         var table = createElement('table', {
             class: 'game-table'
