@@ -1,0 +1,12 @@
+.game-cell {
+    width: 30px;
+    height: 30px;
+}
+
+.game-cell[data-value="0"] {
+    background: red;
+}
+
+.game-cell[data-value="1"] {
+    background: blue;
+}

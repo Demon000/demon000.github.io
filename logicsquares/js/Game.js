@@ -19,6 +19,9 @@
                     class: 'game-cell',
                     parent: row
                 });
+
+                var value = Utils.randomBinary();
+                cell.setAttribute('data-value', value);
             }
         }
         gt.element = table;
