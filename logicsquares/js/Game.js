@@ -15,7 +15,7 @@
         };
 
         gc.flipValue = function() {
-            gc.setValue(!value);
+            gc.setValue(value ? 0 : 1);
             return gc;
         };
 
