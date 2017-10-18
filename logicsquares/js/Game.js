@@ -39,11 +39,6 @@
         if (Utils.isDefined(o.parent)) {
             gc.attach(o.parent);
         }
-
-        if (Utils.isDefined(o.init)) {
-            gc.initValue();
-        }
-
     }
 
     function GameTable(o) {
@@ -94,8 +89,7 @@
             cells.push([]);
             for (var j = 0; j < size; j++) {
                 var cell = new GameCell({
-                    parent: row,
-                    init: true
+                    parent: row
                 });
 
                 cell.listen('click', handleClick.bind(this, i, j));
@@ -104,7 +98,19 @@
             }
         }
 
+        gt.init = function() {
+            for (var i = 0; i < size; i++) {
+                for (var j = 0; j < size; j++) {
+                    cell.initValue();
+                }
+            }
+        };
+
         gt.element = table;
+
+        if (Utils.isDefined(o.init)) {
+            gt.init();
+        }
     }
     window.GameTable = GameTable;
 })();
