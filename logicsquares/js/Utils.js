@@ -4,6 +4,6 @@
     }
 
     window.Utils = {
-        randomBinary
+        randomBinary: randomBinary
     }
 })();
