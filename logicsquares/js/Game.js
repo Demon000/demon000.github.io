@@ -46,7 +46,7 @@
 
         var size = o.size;
 
-        var table = createElement('table', {
+        gt.element = createElement('table', {
             class: 'game-table'
         });
 
@@ -83,7 +83,7 @@
         for (var i = 0; i < size; i++) {
             var row = createElement('tr', {
                class: 'game-row',
-               parent: table
+               parent: gt.element
             });
 
             cells.push([]);
@@ -105,8 +105,6 @@
                 }
             }
         };
-
-        gt.element = table;
 
         if (Utils.isDefined(o.init)) {
             gt.init();
