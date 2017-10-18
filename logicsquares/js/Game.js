@@ -59,17 +59,21 @@
             class: 'game-table'
         });
 
+        var cells = [];
+
         for (var i = 0; i < size; i++) {
             var row = createElement('tr', {
                class: 'game-row',
                parent: table
             });
 
+            cells.push([]);
             for (var j = 0; j < size; j++) {
                 var cell = new GameCell({
                     parent: row,
                     init: true
                 });
+                cells[i].push(cell);
             }
         }
 
