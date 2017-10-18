@@ -51,6 +51,8 @@
             class: 'game-table'
         });
 
+        var cells = [];
+
         for (var i = 0; i < size; i++) {
             var row = createElement('tr', {
                class: 'game-row',
@@ -62,6 +64,7 @@
                     parent: row,
                     init: true
                 });
+                cells.push(cell);
             }
         }
 
