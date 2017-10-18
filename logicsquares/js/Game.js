@@ -1,5 +1,5 @@
 (function() {
-    function GameCell() {
+    function GameCell(o) {
         var gc = this;
 
         var value = Utils.randomBinary();
@@ -31,6 +31,15 @@
         gc.attach = function(parent) {
             parent.appendChild(gc.element);
         };
+
+        if (Utils.isDefined(o.parent)) {
+            gc.attach(o.parent);
+        }
+
+        if (Utils.isDefined(o.init)) {
+            gc.initValue();
+        }
+
     }
 
     function GameTable(options) {
@@ -49,10 +58,13 @@
             });
 
             for (var j = 0; j < size; j++) {
-                var cell = new GameCell();
-                cell.initValue().attach(row);
+                var cell = new GameCell({
+                    parent: row,
+                    init: true
+                });
             }
         }
+
         gt.element = table;
     }
     window.GameTable = GameTable;
