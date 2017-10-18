@@ -32,6 +32,10 @@
             parent.appendChild(gc.element);
         };
 
+        gc.listen = function(event, f) {
+            gc.element.addEventListener(event, f);
+        };
+
         if (Utils.isDefined(o.parent)) {
             gc.attach(o.parent);
         }
