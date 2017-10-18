@@ -57,6 +57,18 @@
 
         var cells = [];
 
+        function handleClick(r, c) {
+            var toFlip = [[r, c], [r - 1, c], [r + 1, c], [r, c - 1], [r, c + 1]];
+
+            toFlip.forEach(function (coords) {
+                var y = coords[0];
+                var x = coords[1];
+                if (y > -1 && y < size && x > -1 && x < size) {
+                    cells[y][x].flipValue();
+                }
+            });
+        }
+
         for (var i = 0; i < size; i++) {
             var row = createElement('tr', {
                class: 'game-row',
@@ -69,6 +81,9 @@
                     parent: row,
                     init: true
                 });
+
+                cell.listen('click', handleClick.bind(this, i, j));
+
                 cells[i].push(cell);
             }
         }
