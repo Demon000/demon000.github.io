@@ -57,6 +57,18 @@
 
         var cells = [];
 
+        function isSolved() {
+            var sum = 0;
+
+            for (var i = 0; i < size; i++) {
+                for (var j = 0; j < size; j++) {
+                    sum += cells[i][j].getValue();
+                }
+            }
+
+            return sum == 0 || sum == size * size;
+        }
+
         function handleClick(r, c) {
             var toFlip = [[r, c], [r - 1, c], [r + 1, c], [r, c - 1], [r, c + 1]];
 
@@ -67,6 +79,10 @@
                     cells[y][x].flipValue();
                 }
             });
+
+            if (isSolved() && Utils.isDefined(o.handleSolved)) {
+                o.handleSolved();
+            }
         }
 
         for (var i = 0; i < size; i++) {
