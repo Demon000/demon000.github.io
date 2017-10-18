@@ -32,14 +32,6 @@
             parent.appendChild(gc.element);
         };
 
-        function handleClick() {
-            gc.flipValue();
-            if (Utils.isDefined(o.handleClick)) {
-                o.handleClick(value);
-            }
-        }
-        gc.element.addEventListener('click', handleClick);
-
         if (Utils.isDefined(o.parent)) {
             gc.attach(o.parent);
         }
