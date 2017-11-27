@@ -108,6 +108,21 @@
             gt.init();
         }
 
+        if (o.numpad && size == 3) {
+            var numpadKeys = [103, 104, 105, 100, 101, 102, 97, 98, 99];
+            document.addEventListener('keydown', function(event) {
+                var key = event.keyCode;
+                var index = numpadKeys.indexOf(key);
+                if (index == -1) {
+                    return;
+                }
+
+                var r = Math.floor(index / size);
+                var c = index % size;
+                handleCellClick.call(gt, r, c);
+            });
+        }
+
         if (!Utils.isDefined(o.handleClick)) {
             o.handleClick = function() {};
         }
