@@ -75,9 +75,7 @@
                 }
             });
 
-            if (Utils.isDefined(o.handleClick)) {
-                o.handleClick.call(this, isSolved());
-            }
+            o.handleClick.call(this, isSolved());
         }
 
         for (var i = 0; i < size; i++) {
@@ -108,6 +106,10 @@
 
         if (Utils.isDefined(o.init)) {
             gt.init();
+        }
+
+        if (!Utils.isDefined(o.handleClick)) {
+            o.handleClick = function() {};
         }
     }
     window.GameTable = GameTable;
