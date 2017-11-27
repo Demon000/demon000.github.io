@@ -104,7 +104,7 @@
             }
         };
 
-        if (Utils.isDefined(o.init)) {
+        if (o.init) {
             gt.init();
         }
 
