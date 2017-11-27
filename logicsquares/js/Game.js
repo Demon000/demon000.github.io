@@ -64,7 +64,7 @@
             return sum == 0 || sum == size * size;
         }
 
-        function handleClick(r, c) {
+        function handleCellClick(r, c) {
             var toFlip = [[r, c], [r - 1, c], [r + 1, c], [r, c - 1], [r, c + 1]];
 
             toFlip.forEach(function (coords) {
@@ -92,7 +92,7 @@
                     parent: row
                 });
 
-                cell.listen('click', handleClick.bind(this, i, j));
+                cell.listen('click', handleCellClick.bind(this, i, j));
 
                 cells[i].push(cell);
             }
