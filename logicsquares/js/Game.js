@@ -75,7 +75,7 @@
                 }
             });
 
-            o.handleClick.call(this, isSolved());
+            o.handleClick.call(gt, isSolved());
         }
 
         for (var i = 0; i < size; i++) {
@@ -90,7 +90,7 @@
                     parent: row
                 });
 
-                cell.listen('click', handleCellClick.bind(this, i, j));
+                cell.listen('click', handleCellClick.bind(gt, i, j));
 
                 cells[i].push(cell);
             }
