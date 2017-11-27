@@ -75,8 +75,8 @@
                 }
             });
 
-            if (isSolved() && Utils.isDefined(o.handleSolved)) {
-                o.handleSolved();
+            if (Utils.isDefined(o.handleClick)) {
+                o.handleClick.call(this, isSolved());
             }
         }
 
