@@ -41,6 +41,7 @@
         }
     }
 
+    var DEFAULT_TABLE_SIZE = 3;
     function NOOP() {}
 
     function GameTable(o) {
@@ -48,6 +49,10 @@
 
         if (!Utils.isDefined(o.handleClick)) {
             o.handleClick = NOOP;
+        }
+
+        if (!Utils.isDefined(o.size)) {
+            o.size = DEFAULT_TABLE_SIZE;
         }
 
         var size = o.size;
