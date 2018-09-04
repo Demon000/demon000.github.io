@@ -62,8 +62,6 @@
             o.use_numpad = DEFAULT_USE_NUMPAD;
         }
 
-        var size = o.size;
-
         gt.element = createElement('table', {
             class: 'game-table'
         });
@@ -73,13 +71,13 @@
         function isSolved() {
             var sum = 0;
 
-            for (var i = 0; i < size; i++) {
-                for (var j = 0; j < size; j++) {
+            for (var i = 0; i < o.size; i++) {
+                for (var j = 0; j < o.size; j++) {
                     sum += cells[i][j].getValue();
                 }
             }
 
-            return sum == 0 || sum == size * size;
+            return sum == 0 || sum == o.size * o.size;
         }
 
         function handleCellClick(r, c) {
@@ -88,7 +86,7 @@
             toFlip.forEach(function(coords) {
                 var y = coords[0];
                 var x = coords[1];
-                if (y > -1 && y < size && x > -1 && x < size) {
+                if (y > -1 && y < o.size && x > -1 && x < o.size) {
                     cells[y][x].flipValue();
                 }
             });
@@ -96,14 +94,14 @@
             o.handleClick.call(gt, isSolved());
         }
 
-        for (var i = 0; i < size; i++) {
+        for (var i = 0; i < o.size; i++) {
             var row = createElement('tr', {
                class: 'game-row',
                parent: gt.element
             });
 
             cells.push([]);
-            for (var j = 0; j < size; j++) {
+            for (var j = 0; j < o.size; j++) {
                 var cell = new GameCell({
                     parent: row
                 });
@@ -115,8 +113,8 @@
         }
 
         gt.init = function() {
-            for (var i = 0; i < size; i++) {
-                for (var j = 0; j < size; j++) {
+            for (var i = 0; i < o.size; i++) {
+                for (var j = 0; j < o.size; j++) {
                     cells[i][j].initValue();
                 }
             }
@@ -133,12 +131,12 @@
                 return;
             }
 
-            var r = Math.floor(index / size);
-            var c = index % size;
+            var r = Math.floor(index / o.size);
+            var c = index % o.size;
             handleCellClick.call(gt, r, c);
        }
 
-        if (o.use_numpad && size == NUMPAD_TABLE_SIZE) {
+        if (o.use_numpad && o.size == NUMPAD_TABLE_SIZE) {
             document.addEventListener('keydown', handleNumpadEvent);
         }
     }
