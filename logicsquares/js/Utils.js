@@ -11,8 +11,4 @@
         randomBinary: randomBinary,
         isDefined: isDefined
     };
-
-    function NOOP() {
-        // Do nothing
-    }
 })();

@@ -41,11 +41,13 @@
         }
     }
 
+    function NOOP() {}
+
     function GameTable(o) {
         var gt = this;
 
         if (!Utils.isDefined(o.handleClick)) {
-            o.handleClick = Utils.NOOP;
+            o.handleClick = NOOP;
         }
 
         var size = o.size;
