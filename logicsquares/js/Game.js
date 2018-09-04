@@ -2,7 +2,7 @@
     function GameCell(o) {
         var gc = this;
 
-        var value = Utils.randomBinary();
+        var value;
 
         gc.element = createElement('td', {
             class: 'game-cell'
