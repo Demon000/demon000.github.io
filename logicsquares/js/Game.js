@@ -44,6 +44,10 @@
     function GameTable(o) {
         var gt = this;
 
+        if (!Utils.isDefined(o.handleClick)) {
+            o.handleClick = Utils.NOOP;
+        }
+
         var size = o.size;
 
         gt.element = createElement('table', {
@@ -121,10 +125,6 @@
                 var c = index % size;
                 handleCellClick.call(gt, r, c);
             });
-        }
-
-        if (!Utils.isDefined(o.handleClick)) {
-            o.handleClick = function() {};
         }
     }
     window.GameTable = GameTable;
