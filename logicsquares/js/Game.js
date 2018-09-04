@@ -67,7 +67,7 @@
         function handleCellClick(r, c) {
             var toFlip = [[r, c], [r - 1, c], [r + 1, c], [r, c - 1], [r, c + 1]];
 
-            toFlip.forEach(function (coords) {
+            toFlip.forEach(function(coords) {
                 var y = coords[0];
                 var x = coords[1];
                 if (y > -1 && y < size && x > -1 && x < size) {
