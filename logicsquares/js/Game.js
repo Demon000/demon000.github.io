@@ -96,8 +96,8 @@
 
         for (var i = 0; i < o.size; i++) {
             var row = createElement('tr', {
-               class: 'game-row',
-               parent: gt.element
+                class: 'game-row',
+                parent: gt.element
             });
 
             cells.push([]);
